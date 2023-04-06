@@ -9,7 +9,9 @@ public class InsertionSort {
         for (int i = 0; i < arr.length; i++) {
             /* arr[0,i) 已排序（与选择排序不同，已排序部分不一定是最终排序结果）, arr[i,n)未排序, 第一轮循环arr[0,n)未排序 */
 
+            /* 将 arr[i] 插入到一个合适的位置 */
             /* 为了找到这个合适的位置, 设置一个新的索引j, 从i开始, 从后向前比较 */
+
             /* 循环终止条件简化前 */
 //            for (int j = i; j - 1 >= 0; j--) {
 //                if (arr[j].compareTo(arr[j - 1]) < 0) swap(arr, j, j - 1);
