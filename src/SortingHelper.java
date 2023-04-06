@@ -1,5 +1,5 @@
 /* 基于比较的排序算法
- * Name           worst, avg, best
+ *                worst, avg, best
  * SelectionSort, O(n^2)
  * InsertionSort, O(n^2)      O(n)
  * */
@@ -28,7 +28,6 @@ public class SortingHelper {
         double time = (endTime - startTime) / 1_000_000_000.0;
         /* correctness */
         if (!SortingHelper.isSorted(arr)) throw new RuntimeException(sortName + " unsuccessful");
-
         System.out.println(String.format("%s, size = %d : %f s", sortName, arr.length, time));
     }
 

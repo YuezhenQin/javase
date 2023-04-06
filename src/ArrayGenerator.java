@@ -1,3 +1,29 @@
+/* Data Structure    Advantage    Disadvantage (增add删remove改c查s)
+* **线性结构**
+* array              s, O(1)
+* stack
+* queue
+* linked list
+* hash list
+
+* **树结构**
+* 二叉树
+* 二叉搜索树
+* 堆
+* B 树
+* AVL
+* 红黑树
+* K-D 树
+* 并查集
+* H 树
+* 线段树
+
+* **图结构**
+* 邻接矩阵
+* 邻接表
+*
+* */
+
 import java.util.Random;
 
 /* 2.9 */
