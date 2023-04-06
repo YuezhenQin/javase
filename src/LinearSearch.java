@@ -1,7 +1,7 @@
 /*
 * a generics class
-* 1.class Class<E> {}
-* 2.<E> type method(E) {}
+* 1.class Class<E> {} 泛型类
+* 2.<E> type method(E) {} 泛型方法
 * */
 
 /* 2.8
@@ -11,7 +11,7 @@
  */
 
 public class LinearSearch<E> {
-    private LinearSearch() {};
+    private LinearSearch() {}
     public static <E> int search(E[] data, E target) {
         for (int i = 0; i < data.length; i++) {
             /* 每一轮循坏开始，[0, i) no target */
