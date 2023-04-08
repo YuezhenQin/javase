@@ -39,4 +39,12 @@ public class Person implements Comparable<Person> { /* 1.4 */
 //        }
         return this.rank - another.rank; /* 从小到大 */
     }
+
+    public static void main(String[] args) {
+        Array<Person> people = new Array(10);
+        people.addLast(new Person("Socrates", 1));
+        people.addLast(new Person("Plato", 2));
+        people.addLast(new Person("Aristotle", 3));
+        System.out.println(people);
+    }
 }
