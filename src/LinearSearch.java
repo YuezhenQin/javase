@@ -6,8 +6,6 @@
 
 /* 2.8
  * O(1) < O(logn) < O(sqrt(n)) < O(n) < O(nlogn) < O(n^2) <O(2^n) <O(n!)
- *
- *
  */
 
 public class LinearSearch<E> {

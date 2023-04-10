@@ -1,10 +1,7 @@
 /*
-* 容器
-* 容器中的元素数量
-* 构造函数（容量）
-* * 有参构造
-* * 无参构造
-* 增删查改
+* 容器data
+* 容器中的元素数量size
+* 构造函数（容量）capacity
 * * addLast(e)        均摊复杂度 O(1)
 * * add(index, e)     O(n)
 * * addFirst(e)       O(n)
@@ -15,6 +12,8 @@
 * * removeElement(e)  O(n)
 
 * * get(index)        O(1) 已知索引
+* * getLast()
+* * getFirst()
 * * contains(e)       O(n) 未知索引
 * * find(e)           O(n) 未知索引
 
@@ -89,6 +88,15 @@ public class Array<E> { /* 名称Array 数据类型E */
         if (index < 0 || index >= size) throw new IndexOutOfBoundsException("");
         return data[index];
     }
+
+    public E getLast() {
+        return get(size - 1);
+    }
+
+    public E getFirst() {
+        return get(0);
+    }
+
     public void set(int index, E e) {
         if (index < 0 || index >= size) throw new IndexOutOfBoundsException("");
         data[index] = e;
@@ -111,8 +119,8 @@ public class Array<E> { /* 名称Array 数据类型E */
     public E remove(int index) {
         if (index < 0 || index >= size) throw new IndexOutOfBoundsException("");
         E tmp = data[index];
-        for (int i = index; i < size; i++){
-            data[i] = data[i+1];
+        for (int i = index + 1; i < size; i++){
+            data[i - 1] = data[i];
         }
         size --;
         data[size] = null; // loitering object: An object can't be garbage collected as long as it is reachable
@@ -140,8 +148,8 @@ public class Array<E> { /* 名称Array 数据类型E */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("Array: size = %d, capacity = %d\n", size, data.length));
-        sb.append('[');
+        sb.append(String.format("Array: size = %d, capacity = %d ", size, data.length));
+        sb.append("[");
         for (int i = 0; i < size; i++) {
             sb.append(data[i]); //将对象作为字符串处理时调用对象所属于的类中的toString()
             if (i != size - 1) sb.append(", ");
@@ -158,6 +166,12 @@ public class Array<E> { /* 名称Array 数据类型E */
         data = newData;
     }
 }
+
+
+
+
+
+
 
 //public class Array {
 //    private int[] data; //容器
