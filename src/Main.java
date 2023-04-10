@@ -1,9 +1,20 @@
 /* Data Structures, and their operations
  * **线性结构**
- * array
+ * array 阵列。阵列的元素是连续分布的。最好用于索引有意义的情况。
  * stack 栈是线性结构。栈的操作是阵列的子集。仅一端增减元素，这一端也称为“栈顶”。LIFO
  * queue 队列是线性结构。队列的操作是阵列的子集。一端（队尾）填充元素（入队），另一端（队首）取出元素（出队）。FIFO
- * linked list
+ * * 栈与队列的应用
+ *     用动态数组实现栈和队列
+ *     用栈实现队列
+ *     用队列实现栈
+ *     最小栈
+ * linked list 链表。链表是离散的元素 连接起来的。
+ *  数据存储在node中。
+ *
+ *  更深入地理解引用
+ *  更深入地理解递归
+ *  辅助组成其它数据结构
+
  * hash list
 
  * **树结构**
@@ -25,6 +36,8 @@
  *
  * */
 
+import java.util.Random;
+
 public class Main {
     public static boolean isValid(String s) {
         ArrayStack<Character> stack = new ArrayStack<>();
@@ -40,6 +53,21 @@ public class Main {
             }
         }
         return stack.isEmpty();
+    }
+
+    //使用queue，运行size个enqueue和dequeue操作所需要的时间。
+    private static void testQueue(Queue<Integer> queue, int count) {
+        long startTime = System.nanoTime();
+        Random rand = new Random();
+        for (int i = 0; i < count; i++) {
+            queue.enqueue(rand.nextInt(Integer.MAX_VALUE));
+        }
+        for (int i = 0; i < count; i++) {
+            queue.dequeue();
+        }
+        long endTime = System.nanoTime();
+        double time = (endTime - startTime) / 1_000_000_000.0;
+        System.out.println(queue.getClass() + ": time:" + time + "s size:" + count);
     }
 
     public static void main(String[] args) {
@@ -75,7 +103,7 @@ public class Main {
 
         System.out.println(isValid("(){}[]"));
 
-        /* Queue Test */
+        /* ArrayQueue Test */
         ArrayQueue<Integer> queue = new ArrayQueue<>();
         for (int i = 0; i < 10; i++) {
             queue.enqueue(i);
@@ -86,6 +114,22 @@ public class Main {
             }
         }
 
-    }
+        /* CircularArrayQueue Test */
+        CircularArrayQueue<Integer> cArrayQueue = new CircularArrayQueue<>();
+        for(int i = 0; i < 10; i++) {
+            cArrayQueue.enqueue(i);
+            System.out.println("enqueued:" + cArrayQueue);
+            if (i % 3 == 0) {
+                cArrayQueue.dequeue();
+                System.out.println("dequeued:" + cArrayQueue);
+            }
+        }
+
+        int count = 100000;
+        ArrayQueue<Integer> aqueue = new ArrayQueue<>();
+        CircularArrayQueue<Integer> cqueue = new CircularArrayQueue<>();
+        testQueue(aqueue, count);
+        testQueue(cqueue, count);
+     }
 }
 

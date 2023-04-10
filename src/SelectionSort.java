@@ -30,7 +30,7 @@ public class SelectionSort <E> {
         for (int size: sizes) {
             Integer[] arr = ArrayGenerator.generateRandomArray(size);
 
-            SortingHelper.sortTest("SelectionSort", arr);
+            SortingHelper.testSort("SelectionSort", arr);
         }
 //        long startTime = System.nanoTime();
 //        SelectionSort.sort(arr);

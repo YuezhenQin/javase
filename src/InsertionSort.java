@@ -53,15 +53,15 @@ public class InsertionSort {
             System.out.println("Random array:");
             Integer[] randomArr = ArrayGenerator.generateRandomArray(size);
             Integer[] randomArrNew = Arrays.copyOf(randomArr, randomArr.length);
-            SortingHelper.sortTest("SelectionSort", randomArr);
-            SortingHelper.sortTest("InsertionSortNew", randomArrNew);
+            SortingHelper.testSort("SelectionSort", randomArr);
+            SortingHelper.testSort("InsertionSortNew", randomArrNew);
             System.out.println();
 
             System.out.println("Ordered array:");
             Integer[] orderedArr = ArrayGenerator.generateOrderedArray(size);
             Integer[] orderedArrNew = Arrays.copyOf(orderedArr, orderedArr.length);
-            SortingHelper.sortTest("SelectionSort", orderedArr);
-            SortingHelper.sortTest("InsertionSortNew", orderedArrNew);
+            SortingHelper.testSort("SelectionSort", orderedArr);
+            SortingHelper.testSort("InsertionSortNew", orderedArrNew);
             System.out.println();
         }
     }

@@ -14,10 +14,11 @@ public class SortingHelper {
         return true;
     }
 
-    public static <E extends Comparable<E>>void sortTest(String sortName, E[] arr) {
+    public static <E extends Comparable<E>>void testSort(String sortName, E[] arr) {
 
         /* performance */
         long startTime = System.nanoTime();
+
         /* 反射机制 */
         if (sortName.equals("SelectionSort")) SelectionSort.sort(arr);
         else if (sortName.equals("InsertionSort")) InsertionSort.sort(arr);

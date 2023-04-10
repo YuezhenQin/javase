@@ -34,7 +34,7 @@
 
 public class Array<E> { /* 名称Array 数据类型E */
     private E[] data; //容器
-    private int size; //容器中的元素数量，容器的索引范围为 [0,size-1], size 作为索引也可指引第一个没有元素的位置
+    private int size; //容器中的元素数量，容器的索引范围为 [0,size-1], size 作为索引也可指引第一个没有元素的位置（下一个待加入元素的位置）
 
     //构造函数
     public Array(int capacity) { //容器的容量
