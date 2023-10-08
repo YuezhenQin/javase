@@ -1,4 +1,4 @@
-/* 基于比较的排序算法
+/* 基于比较 <E extends Comparable<E>>的排序算法
  *                worst, avg, best
  * SelectionSort, O(n^2)
  * InsertionSort, O(n^2)      O(n)

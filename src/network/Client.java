@@ -37,13 +37,12 @@ public class Client {
                 ps.println(str);
                 System.out.println("客户端已发送。");
 
-                String message = br.readLine();
 
-                if ("再见".equalsIgnoreCase(message)) {
+                if ("再见".equalsIgnoreCase(str)) {
                     System.out.println("会话结束");
                     break;
                 }
-
+                String message = br.readLine();
                 System.out.println("来自服务器的字符串:" + message);
 
             }
