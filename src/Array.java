@@ -3,12 +3,12 @@
 * 容器中的元素数量size
 * 构造函数（容量）capacity
 * * addLast(e)        均摊复杂度 O(1)
-* * add(index, e)     O(n)
 * * addFirst(e)       O(n)
+* * add(index, e)     O(n) 由于index取值范围为[0,size-1]，概率相等。消耗的期望为...
 
-* * remove(index)     O(n)
-* * removeFirst()     O(n)
 * * removeLast()      均摊复杂度 O(1)
+* * removeFirst()     O(n)
+* * remove(index)     O(n)
 * * removeElement(e)  O(n)
 
 * * get(index)        O(1) 已知索引

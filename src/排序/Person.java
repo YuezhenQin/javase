@@ -1,6 +1,7 @@
 package 排序;
 
-public class Person implements Comparable<Person> { /* 1.4 */
+
+public class Person implements Comparable<Person> {
     private String name;
     private int rank;
 
@@ -49,5 +50,7 @@ public class Person implements Comparable<Person> { /* 1.4 */
         people.addLast(new Person("Plato", 2));
         people.addLast(new Person("Aristotle", 3));
         System.out.println(people);
+
+
     }
 }

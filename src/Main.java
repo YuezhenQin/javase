@@ -76,13 +76,35 @@ public class Main {
         nums.add(0, 1);
         System.out.println(nums);
 
+        nums.addLast(10);
 
+        ArrayReviewE<Integer> a = new ArrayReviewE<>(10);
+        a.addLast(1);
+        a.addLast(2);
+        a.addLast(3);
+        a.addLast(4);
+        a.addLast(5);
+        a.removeFirst();
+        a.removeFirst();
+        a.removeLast();
+        System.out.println(a);
+
+        ArrayReviewD<Integer> a1 = new ArrayReviewD<>();
+        for (int i = 0; i < 10; i++) {
+            a1.addLast(i);
+        }
+        System.out.println(a1);
+
+        a1.add(1, 999);
+        System.out.println(a1);
 
         Array<Integer> arr = new Array(10);
         for (int i = 0; i < 10; i++) {
             arr.addLast(i);
         }
         System.out.println(arr);
+
+
 
         arr.add(10, 100);
         System.out.println(arr);
@@ -93,6 +115,7 @@ public class Main {
         arr.remove(1);
         arr.remove(1);
         System.out.println(arr);
+
 
         /* Stack Test */
 
