@@ -26,17 +26,19 @@
 * resize() 伸缩        O(n)
 * */
 
+
 /*
 * 局限1.固定的数据类型->泛型 1.7
-* 局限2.固定的容量->动态地伸缩容量(新建容器) 1.8
+* 局限2.固定的容量->动态地伸缩容量 1.8
 * 局限3.addLast(),removeLast() 复杂度震荡->Lazy Resize 1.10
 * */
 
-public class Array<E> { /* 名称Array 数据类型E */
+public class Array<E> {
+    /*Array的变量*/
     private E[] data; //容器
     private int size; //容器中的元素数量，容器的索引范围为 [0,size-1], size 作为索引也可指引第一个没有元素的位置（下一个待加入元素的位置）
 
-    //构造函数
+    /*Array的构造函数*/
     public Array(int capacity) { //容器的容量
         data = (E[]) new Object[capacity]; /* E[capacity]*/
         size = 0;
@@ -45,6 +47,7 @@ public class Array<E> { /* 名称Array 数据类型E */
         this(10);
     }
 
+    /*Array的增、删、改、查方法*/
     public int getSize() {
         return size;
     }

@@ -72,6 +72,12 @@ public class Main {
 
     public static void main(String[] args) {
         /* Array Test */
+        ArrayReview nums = new ArrayReview(100);
+        nums.add(0, 1);
+        System.out.println(nums);
+
+
+
         Array<Integer> arr = new Array(10);
         for (int i = 0; i < 10; i++) {
             arr.addLast(i);
