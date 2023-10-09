@@ -1,17 +1,17 @@
-public class ArrayStack<E> implements Stack<E> {
+public class ArrayStack<E> implements Stack<E> { //动态数组实现的栈
+    //栈的属性
     Array<E> arr;
+    //栈的构造方法
     public ArrayStack(int capacity){
         arr = new Array<E>(capacity);
     }
     public ArrayStack() {
         arr = new Array<E>();
     }
+
     @Override
     public int getSize() {
         return arr.getSize();
-    }
-    public int getCapacity() {
-        return arr.getCapacity();
     }
     @Override
     public boolean isEmpty() {
@@ -28,15 +28,26 @@ public class ArrayStack<E> implements Stack<E> {
         return arr.getLast();
     }
     @Override
+//    public String toString() {
+//        StringBuilder sb = new StringBuilder();
+//        sb.append("Stack :");
+//        sb.append("[");
+//        for(int i = 0; i < arr.getSize(); i++) {
+//            sb.append(arr.get(i));
+//            if (i != arr.getSize() - 1) sb.append(", ");
+//        }
+//        sb.append("] top");
+//        return sb.toString();
+//    }
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Stack :");
-        sb.append("[");
-        for(int i = 0; i < arr.getSize(); i++) {
+        sb.append("Stack:");
+        sb.append('[');
+        for (int i = 0; i < getSize(); i++) {
             sb.append(arr.get(i));
-            if (i != arr.getSize() - 1) sb.append(", ");
+            if (i != getSize() - 1) sb.append(", ");
+            else sb.append("] top");
         }
-        sb.append("] top");
         return sb.toString();
     }
 }

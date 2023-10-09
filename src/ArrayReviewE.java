@@ -1,6 +1,6 @@
 //泛型特性
-public class ArrayReviewE<E> { //
-    private E[] data; //
+public class ArrayReviewE<E> { //类支持泛型
+    private E[] data;
     private int size;
 
     public ArrayReviewE(int capacity) {

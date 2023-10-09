@@ -1,36 +1,44 @@
 /*
+* 目标:对研究数据结构的方式有一个整体印象（如何进行增删查改）
+
 * 容器data
 * 容器中的元素数量size
 * 构造函数（容量）capacity
-* * addLast(e)        均摊复杂度 O(1)
-* * addFirst(e)       O(n)
-* * add(index, e)     O(n) 由于index取值范围为[0,size-1]，概率相等。消耗的期望为...
 
-* * removeLast()      均摊复杂度 O(1)
+* 增
+* * addLast(e)        O(1) 存在resize()
+* * addFirst(e)       O(n)
+* * add(index, e)     O(n/2)=O(n) 由于index取值范围为[0,size-1]，概率相等。消耗的期望为...
+
+* 删
+* * removeLast()      O(1) 存在resize()
 * * removeFirst()     O(n)
 * * remove(index)     O(n)
 * * removeElement(e)  O(n)
 
+* 查
 * * get(index)        O(1) 已知索引
-* * getLast()
-* * getFirst()
+* * getLast()         O(1)
+* * getFirst()        O(1)
 * * contains(e)       O(n) 未知索引
 * * find(e)           O(n) 未知索引
 
+* 改
 * * set(index, e)     O(1), “随机访问”
+
+* resize() 伸缩        O(n) 计算均摊复杂度
 
 * toString()
 * equals()
 * compareTo()
 
-* resize() 伸缩        O(n)
-* */
+ * */
 
 
-/*
-* 局限1.固定的数据类型->泛型 1.7
-* 局限2.固定的容量->动态地伸缩容量 1.8
-* 局限3.addLast(),removeLast() 复杂度震荡->Lazy Resize 1.10
+/* ● ○ ■ □ ▼ ▽
+* ○ 局限1.固定的数据类型->泛型 1.7
+* ○ 局限2.固定的容量->动态地伸缩容量 1.8
+* ○ 局限3.连续的addLast()和removeLast()造成复杂度震荡->Lazy Resize 1.10
 * */
 
 public class Array<E> {

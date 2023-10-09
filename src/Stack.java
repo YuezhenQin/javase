@@ -1,17 +1,15 @@
 /*
-* 栈的特性
-*
-*
 * 栈的应用
-* 1.undo 操作-文本编辑器
-* 2.系统调用栈-操作系统
-* 3.括号匹配 (valid parentheses)-编译器
+* 1.文本编辑器的撤销操作(从栈顶压入抛出元素)
+* 2.操作系统记录程序的调用过程
+* 3.编译器检测括号匹配 (valid parentheses)
 * */
 
 public interface Stack<E> {
-    int getSize();
-    boolean isEmpty();
-    void push(E e);
-    E pop();
-    E peek();
+    void push(E e); //入栈
+    E pop(); //出栈
+    E peek(); //栈顶元素
+    int getSize(); //元素数量
+    boolean isEmpty(); //是否为空
+
 }

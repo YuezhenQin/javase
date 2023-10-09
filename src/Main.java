@@ -39,17 +39,31 @@
 import java.util.Random;
 
 public class Main {
-    public static boolean isValid(String s) {
+//    public static boolean isValid(String s) {
+//        ArrayStack<Character> stack = new ArrayStack<>();
+//        for (int i = 0; i < s.length(); i++) {
+//            char c = s.charAt(i);
+//            if (c == '(' || c == '[' || c == '{') stack.push(c);
+//            else {
+//                if (stack.isEmpty()) return false;
+//                char top = stack.pop();
+//                if (c == ')' && top != '(' ) return false;
+//                if (c == ']' && top != '[' ) return false;
+//                if (c == '}' && top != '{' ) return false;
+//            }
+//        }
+//        return stack.isEmpty();
+//    }
+    public static boolean isValid(String str) {
         ArrayStack<Character> stack = new ArrayStack<>();
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if (c == '(' || c == '[' || c == '{') stack.push(c);
-            else {
+        for (int i=0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (c=='{' ||str.charAt(i)=='[' || str.charAt(i)=='(') {
+                stack.push(c);
+            } else {
                 if (stack.isEmpty()) return false;
-                char top = stack.pop();
-                if (c == ')' && top != '(' ) return false;
-                if (c == ']' && top != '[' ) return false;
-                if (c == '}' && top != '{' ) return false;
+                char topc = stack.pop();
+                if ((c =='}' && topc !='{') || (c ==']' && topc !='[') || (c ==')' && topc !='(')) return false;
             }
         }
         return stack.isEmpty();
@@ -104,8 +118,6 @@ public class Main {
         }
         System.out.println(arr);
 
-
-
         arr.add(10, 100);
         System.out.println(arr);
 
@@ -118,12 +130,11 @@ public class Main {
 
 
         /* Stack Test */
-
         ArrayStack<Integer> stack = new ArrayStack<>();
         stack.push(10);
         System.out.println(stack);
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 15; i++) {
             stack.push(i);
         }
         System.out.println(stack);
@@ -131,6 +142,9 @@ public class Main {
         System.out.println(stack);
 
         System.out.println(isValid("(){}[]"));
+        System.out.println(isValid("(a){}[]"));
+        System.out.println(isValid("[]{"));
+        System.out.println(isValid("[{}"));
 
         /* ArrayQueue Test */
         ArrayQueue<Integer> queue = new ArrayQueue<>();
