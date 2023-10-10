@@ -1,14 +1,9 @@
-/*        队列          循环队列
-* enqueue O(1) 均摊     O(1) 均摊
-* dequeue O(n)         O(1) 均摊
-* peek    O(1)         O(1)
-* */
 public class CircularArrayQueue<E> implements Queue<E> {
     private E[] data;
     private int head, tail, size;
 
     public CircularArrayQueue(int capacity) {
-        data = (E[]) new Object[capacity + 1]; /* * */
+        data = (E[]) new Object[capacity + 1];
         head = 0;
         tail = 0;
         size = 0;
@@ -23,7 +18,7 @@ public class CircularArrayQueue<E> implements Queue<E> {
         return size;
     }
     public int getCapacity() {
-        return data.length - 1; /* 浪费一个空间 */
+        return data.length - 1; /* 主动浪费一个空间 */
     }
     @Override
     public boolean isEmpty() {
@@ -31,16 +26,16 @@ public class CircularArrayQueue<E> implements Queue<E> {
     }
     @Override
     public void enqueue(E e) {
-        /* 是否已满 tail+1 == head */
+        /* 队列已满 (tail+1) % capacity == head */
         if ((tail + 1) % data.length == head) resize(2 * getCapacity());
         data[tail] = e;
-        tail = (tail + 1) % data.length;
+        tail = (tail + 1) % data.length; //"循环"的索引
         size ++;
     }
 
     @Override
     public E dequeue() {
-        /* 是否为空 */
+        /* 空队列 head == tail */
         if (isEmpty()) throw new RuntimeException("");
         E tmp = data[head];
         data[head] = null;
@@ -50,7 +45,7 @@ public class CircularArrayQueue<E> implements Queue<E> {
         return tmp;
     }
 
-    public E peek() {
+    public E getFirst() {
         if (isEmpty()) throw new RuntimeException("");
         return data[head];
     }
@@ -77,18 +72,6 @@ public class CircularArrayQueue<E> implements Queue<E> {
         sb.append("] tail ");
         return sb.toString();
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //    private E[] data;

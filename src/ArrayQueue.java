@@ -1,4 +1,5 @@
 public class ArrayQueue<E> implements Queue<E> {
+    //基于DynamicArray的容器
     private Array<E> arr;
 
     public ArrayQueue(int capacity) {
@@ -33,7 +34,7 @@ public class ArrayQueue<E> implements Queue<E> {
     }
 
     @Override
-    public E peek() {
+    public E getFirst() {
         return arr.getFirst();
     }
 

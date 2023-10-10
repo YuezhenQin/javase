@@ -1,6 +1,6 @@
 /* Data Structures, and their operations
  * **线性结构**
- * array 阵列。阵列的元素是连续分布的。最好用于索引有意义的情况。
+ * array 阵列。阵列在内部存储中开辟出的空间是连续分布的，所以可以直接寻找索引对应的偏移量，计算出数据的地址。
  * stack 栈是线性结构。栈的操作是阵列的子集。仅一端增减元素，这一端也称为“栈顶”。LIFO
  * queue 队列是线性结构。队列的操作是阵列的子集。一端（队尾）填充元素（入队），另一端（队首）取出元素（出队）。FIFO
  * * 栈与队列的应用
@@ -8,8 +8,7 @@
  *     用栈实现队列
  *     用队列实现栈
  *     最小栈
- * linked list 链表。链表是离散的元素 连接起来的。
- *  数据存储在node中。
+ * linked list 链表。链表是离散的，数据存储在E e中，通过各个node中的Node next连接起来的。
  *
  *  更深入地理解引用
  *  更深入地理解递归
@@ -69,7 +68,7 @@ public class Main {
         return stack.isEmpty();
     }
 
-    //使用queue，运行size个enqueue和dequeue操作所需要的时间。
+    //测试队列运行size个enqueue和dequeue操作所需要的时间。
     private static void testQueue(Queue<Integer> queue, int count) {
         long startTime = System.nanoTime();
         Random rand = new Random();
@@ -158,8 +157,8 @@ public class Main {
         }
 
         /* CircularArrayQueue Test */
-        CircularArrayQueue<Integer> cArrayQueue = new CircularArrayQueue<>();
-        for(int i = 0; i < 10; i++) {
+        CircularArrayQueueReview<Integer> cArrayQueue = new CircularArrayQueueReview<>();
+        for(int i = 0; i < 20; i++) {
             cArrayQueue.enqueue(i);
             System.out.println("enqueued:" + cArrayQueue);
             if (i % 3 == 0) {
@@ -168,6 +167,7 @@ public class Main {
             }
         }
 
+        //普通队列与循环队列的性能对比
         int count = 100000;
         ArrayQueue<Integer> aqueue = new ArrayQueue<>();
         CircularArrayQueue<Integer> cqueue = new CircularArrayQueue<>();
