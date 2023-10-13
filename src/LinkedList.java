@@ -1,15 +1,14 @@
-package 动态数据结构;
-
 /*
 * 链表的特性
 * 1.链表是最简单的动态数据结构，不存在固定容量的问题。
 * 2.更深入地理解引用，甚至是计算机系统中与内存管理有关的机制。
-* 3.更深入地理解递归（链表具有天然的递归结构，头结点的next指针指向了一个更短的链表（可以在一个更短的链表中处理一个同样的问题，并将结果链表链接到头结点））
+* 3.更深入地理解递归
 * 4.用于组织更加复杂的数据结构
 *
-* 单链表(每个节点包含一个指向后一个元素的指针next)
-* 双链表(每个节点包含一个指向前一个元素的指针prev和一个指向后一个元素的指针next)
-* 循环链表(设立虚拟头结点，尾结点不指向空而指向虚拟头结点)
+* 增 O(n)
+* 删 O(n)
+* 改 O(n)
+* 查 O(n)
 *
 * */
 
@@ -34,8 +33,7 @@ public class LinkedList<E> {
         }
     }
 
-    //由于牵扯到对LL中间的元素的操作，设立虚拟head 统一对中间元素和对两端元素进行add()和remove()操作的逻辑
-    private Node head;
+    private Node head; //虚拟head 统一add()操作的逻辑
     private int size;
 
     public LinkedList() {
@@ -137,10 +135,9 @@ public class LinkedList<E> {
         return sb.toString();
     }
 
-    //删除单个元素
     public E remove(int index) {
         if (index < 0 || index >= size) throw new IllegalArgumentException("索引越界");
-        //遍历的目的是找到index-1位置（index之前一个位置）的节点，才方便去删除它
+        //遍历的目的是找到index-1位置的节点
         Node prev = head;
         for (int i = 0; i < index; i++) {
             prev = prev.next;
@@ -159,10 +156,5 @@ public class LinkedList<E> {
     }
     public E removeLast() {
         return remove(size - 1);
-    }
-
-    //删除多个元素
-    public E removeElements() {
-        return null;
     }
 }

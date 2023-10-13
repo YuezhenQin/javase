@@ -1,11 +1,11 @@
-public class ArrayStack<E> implements Stack<E> { //动态数组实现的栈
+public class ARStack<E> implements Stack<E> { //动态数组实现的栈
     //栈的属性
     Array<E> arr;
     //栈的构造方法
-    public ArrayStack(int capacity){
+    public ARStack(int capacity){
         arr = new Array<E>(capacity);
     }
-    public ArrayStack() {
+    public ARStack() {
         arr = new Array<E>();
     }
 

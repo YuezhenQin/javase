@@ -5,5 +5,5 @@ LinearSearch
 SelectionSort
 InsertionSort
 Array
-ArrayStack
-ArrayQueue
+ARStack
+ARQueue

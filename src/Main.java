@@ -3,18 +3,10 @@
  * array 阵列。阵列在内部存储中开辟出的空间是连续分布的，所以可以直接寻找索引对应的偏移量，计算出数据的地址。
  * stack 栈是线性结构。栈的操作是阵列的子集。仅一端增减元素，这一端也称为“栈顶”。LIFO
  * queue 队列是线性结构。队列的操作是阵列的子集。一端（队尾）填充元素（入队），另一端（队首）取出元素（出队）。FIFO
- * * 栈与队列的应用
- *     用动态数组实现栈和队列
- *     用栈实现队列
- *     用队列实现栈
- *     最小栈
- * linked list 链表。链表是离散的，数据存储在E e中，通过各个node中的Node next连接起来的。
- *
- *  更深入地理解引用
- *  更深入地理解递归
- *  辅助组成其它数据结构
 
- * hash list
+ * linked list (LL) 链表是最简单的动态数据结构。链表是离散的，数据存储在E e中，通过各个node中的Node next连接起来的。
+ * 动态数据结构包括 linked list (LL) 链表, hash list (HL) 散列表, skip list (SL) 跳表, binary search tree (BST) 二叉搜索树
+ * https://blog.csdn.net/qq_21794823/article/details/118638177#:~:text=%E4%BB%80%E4%B9%88%E6%98%AF%E5%8A%A8%E6%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84,%E8%80%8C%E4%B8%94%E6%95%88%E7%8E%87%E9%83%BD%E5%BE%88%E9%AB%98%E3%80%82
 
  * **树结构**
  * 二叉树
@@ -35,6 +27,7 @@
  *
  * */
 
+
 import java.util.Random;
 
 public class Main {
@@ -54,7 +47,7 @@ public class Main {
 //        return stack.isEmpty();
 //    }
     public static boolean isValid(String str) {
-        ArrayStack<Character> stack = new ArrayStack<>();
+        ARStack<Character> stack = new ARStack<>();
         for (int i=0; i < str.length(); i++) {
             char c = str.charAt(i);
             if (c=='{' ||str.charAt(i)=='[' || str.charAt(i)=='(') {
@@ -82,6 +75,22 @@ public class Main {
         double time = (endTime - startTime) / 1_000_000_000.0;
         System.out.println(queue.getClass() + ": time:" + time + "s size:" + count);
     }
+
+    private static <E> void testStack(Stack<Integer> stack, int count) {
+        long startTime = System.nanoTime();
+        Random rand = new Random();
+        for (int i = 0; i < count; i++) {
+            stack.push(rand.nextInt(Integer.MAX_VALUE));
+        }
+        for (int i = 0; i < count; i++) {
+            stack.pop();
+        }
+        long endTime = System.nanoTime();
+        double time = (endTime - startTime) / 1_000_000_000.0;
+
+        System.out.println(stack.getClass() + ": time:" + time + "s size:" + count);
+    }
+
 
     public static void main(String[] args) {
         /* Array Test */
@@ -129,7 +138,7 @@ public class Main {
 
 
         /* Stack Test */
-        ArrayStack<Integer> stack = new ArrayStack<>();
+        ARStack<Integer> stack = new ARStack<>();
         stack.push(10);
         System.out.println(stack);
 
@@ -145,14 +154,25 @@ public class Main {
         System.out.println(isValid("[]{"));
         System.out.println(isValid("[{}"));
 
-        /* ArrayQueue Test */
-        ArrayQueue<Integer> queue = new ArrayQueue<>();
+        /* Queue Test */
+        ARQueue<Integer> queue = new ARQueue<>();
+        //入队3个元素，出队1个元素
         for (int i = 0; i < 10; i++) {
             queue.enqueue(i);
             System.out.println(queue);
             if (i % 3 == 2) {
                 queue.dequeue();
                 System.out.println(queue);
+            }
+        }
+
+        LLQueue<Integer> llQueue = new LLQueue<>();
+        for (int i = 0; i < 10; i++) {
+            llQueue.enqueue(i);
+            System.out.println(llQueue);
+            if (i % 3 == 2) {
+                llQueue.dequeue();
+                System.out.println(llQueue);
             }
         }
 
@@ -167,13 +187,21 @@ public class Main {
             }
         }
 
-        //普通队列与循环队列的性能对比
-        int count = 100000;
-        ArrayQueue<Integer> aqueue = new ArrayQueue<>();
-        CircularArrayQueue<Integer> cqueue = new CircularArrayQueue<>();
-        testQueue(aqueue, count);
-        testQueue(cqueue, count);
 
+        //AR队列、循环队列、LL队列的性能比较
+        int count = 100000;
+        ARQueue<Integer> aqueue = new ARQueue<>();
+        LLQueue<Integer> llqueue = new LLQueue<>();
+        CircularArrayQueue<Integer> cqueue = new CircularArrayQueue<>();
+
+        testQueue(aqueue, count); //AR队列
+        testQueue(llqueue,count); //LL队列
+        testQueue(cqueue, count); //循环AR队列
+
+        //ARStack与LLStack的性能比较
+        ARStack<Integer> arrStack = new ARStack<>();
+        LLStack<Integer> llStack = new LLStack<>();
+        testStack(arrStack, count); //阵列栈
+        testStack(llStack, count); //链表栈
      }
 }
-

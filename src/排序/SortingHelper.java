@@ -25,8 +25,8 @@ public class SortingHelper {
         System.out.println(String.format("%s, n=%d: in %f", name, arr.length, time));
     }
 
-    //1.选择排序(SelectionSort) 稳定n^2
-    //2.插入排序(InsertionSort) 数据有序或近乎有序(极少数数据处于无序状态) n, 数据无序 n^2
-    //3.
+    //1.选择排序(SelectionSort) 稳定 n^2
+    //2.插入排序(InsertionSort) 数据无序 n^2, 数据有序或近乎有序(极少数数据处于无序状态) n
+    //3.归并排序(MergeSort) nlogn 必须开辟新的空间
 }
 
