@@ -1,5 +1,7 @@
 package 排序;
 
+import com.sun.xml.internal.bind.v2.model.annotation.Quick;
+
 public class SortingHelper {
     public static <E extends Comparable<E>> boolean isSorted(E[] arr) {
         for (int i = 1; i < arr.length; i++) {
@@ -16,6 +18,14 @@ public class SortingHelper {
             InsertionSort.sort(arr);
         } else if (name.equals("InsertionSortUpdated")) {
             InsertionSort.sort_updated(arr);
+        } else if (name.equals("MergeSort")) {
+            MergeSort.sort(arr);
+        } else if (name.equals("MergeSortUpdated")) {
+            MergeSort.sort_updated(arr);
+        } else if (name.equals("QuickSort")) {
+            QuickSort.sort(arr);
+        } else if (name.equals("QuickSort2ways")) {
+            QuickSort.sort2ways(arr);
         }
         long endTime = System.nanoTime();
         double time = (endTime - startTime) / 1000000000.0;
@@ -27,6 +37,11 @@ public class SortingHelper {
 
     //1.选择排序(SelectionSort) 稳定 n^2
     //2.插入排序(InsertionSort) 数据无序 n^2, 数据有序或近乎有序(极少数数据处于无序状态) n
-    //3.归并排序(MergeSort) nlogn 必须开辟新的空间
+    //3.归并排序(MergeSort) 必须开辟新的空间(NOT in-place), 数据无序 nlogn, 数据有序或近乎有序(极少数数据处于无序状态) n
+    //4.快速排序(QuickSort) 本质是一个随机算法, partition 是随机的; E= nlogn
+
+    //注意特殊的数据会影响算法的性能（random, ordered）
+
+
 }
 

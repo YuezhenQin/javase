@@ -23,13 +23,25 @@ public class InsertionSort<E> {
     }
     public static <E extends Comparable<E>> void sort_updated(E[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            E tmp = arr[i]; //加入一个临时变量记录当前处理的元素
+            E tmp = arr[i]; //加入一个临时变量记录当前处理的元素，将arr[i]插入到合适的位置
             for (int j = i; j > 0; j--) {
                 if (tmp.compareTo(arr[j - 1]) < 0) arr[j - 1] = arr[j]; //交换操作转换为赋值操作
                 else {arr[j] = tmp; break;}
             }
         }
     }
+
+    public static <E extends Comparable<E>> void sort_updated(E[] arr, int left, int right) {
+        for (int i = left; i <= right; i++) {
+            E tmp = arr[i]; //加入一个临时变量记录当前处理的元素
+            for (int j = i; j - 1 >= left; j--) {
+                if (tmp.compareTo(arr[j - 1]) < 0) arr[j - 1] = arr[j]; //交换操作转换为赋值操作
+                else {arr[j] = tmp; break;}
+            }
+        }
+    }
+
+
 
     private static <E> void swap(E[] arr, int i, int j) {
         E tmp = arr[i]; //寻址操作

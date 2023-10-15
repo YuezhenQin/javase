@@ -15,11 +15,14 @@ public class SelectionSort<E> {
             swap(i, minIndex, data);
         }
     }
+
     private static <E> void swap(int i, int minIndex, E data[]) {
         E tmp = data[i];
         data[i] = data[minIndex];
         data[minIndex] = tmp;
     }
+
+
 
     public static void main(String[] args) {
 //        Integer arr[] = {1,4,2,3,6,5,7};
