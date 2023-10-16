@@ -1,5 +1,7 @@
 package 排序;
 
+//MergeSort
+
 public class Solution493 {
     public int reversePairs(int[] nums) {
         int result = 0;
