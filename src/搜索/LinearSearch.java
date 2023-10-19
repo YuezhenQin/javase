@@ -1,12 +1,12 @@
 package 搜索;/*
-* a generics class
-* 1.class Class<E> {} 泛型类
-* 2.<E> type method(E) {} 泛型方法
-* */
-
-/* 2.8
+/*
  * O(1) < O(logn) < O(sqrt(n)) < O(n) < O(nlogn) < O(n^2) <O(2^n) <O(n!)
  */
+
+
+//1.线性查找(LinearSearch) O(n)
+//2.二分查找(BinarySearch) O(logn) 数据已排序是二分查找的前置条件
+//3.
 
 public class LinearSearch<E> {
     /*private+static*/

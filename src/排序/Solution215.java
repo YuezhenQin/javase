@@ -12,7 +12,24 @@ public class Solution215 {
         return selectK(nums, 0, nums.length - 1, nums.length - k, rand);
     }
 
-    //在[left,right]的范围内求解 kth 并返回
+    //非递归实现 selectK()
+    private int selectK(int[] arr, int k, Random rand) {
+        int left = 0;
+        int right = arr.length - 1;
+        while (left <= right) {
+           int p = partition(arr, left, right, rand);
+           if (p == k) return p;
+           if (p > k) {
+               right = p - 1;
+           } else {
+               left = p + 1;
+           }
+        }
+        // left > right
+        return -1; //k不在[0, nums.length-1]的之内
+    }
+
+    //递归实现 selectK(), 在[left,right]的范围内求解k并返回
     private int selectK(int[] arr, int left, int right, int k, Random rand) {
         //在[left,right]的范围内选择一个随机索引
         int p = partition(arr, left, right, rand);

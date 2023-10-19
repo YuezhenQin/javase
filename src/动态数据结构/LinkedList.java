@@ -64,9 +64,7 @@ public class LinkedList<E> {
 
     public void add(int index, E e) {
         if (index < 0 || index > size) throw new IllegalArgumentException("索引越界");
-
 //        if (index == 0) addFirst(e); //addFirst与add逻辑上有差别，设置虚拟head
-
         else {
             //遍历的目的是找到index位置前一个位置的节点
             Node prev = head; //head是0这个索引位置的元素之前一个的节点
@@ -95,9 +93,11 @@ public class LinkedList<E> {
     public E getFirst() {
         return get(0);
     }
+
     public E getLast() {
         return get(size-1);
     }
+
     public void set(int index, E e) {
         if (index < 0 || index > size) throw new IllegalArgumentException();
 
@@ -157,6 +157,7 @@ public class LinkedList<E> {
     public E removeFirst() {
         return remove(0);
     }
+
     public E removeLast() {
         return remove(size - 1);
     }
@@ -164,5 +165,27 @@ public class LinkedList<E> {
     //删除多个元素
     public E removeElements() {
         return null;
+    }
+
+
+    //递归实现
+    public void add(E e) {
+        head = add(head, e);
+    }
+    private Node add(Node node, E e) {
+        if (node == null) {
+            size++;
+            return new Node(e);
+        }
+        node.next = add(node.next, e);
+        return node;
+    }
+
+    public static void main(String[] args) {
+        LinkedList<Integer> ll = new LinkedList<>();
+        ll.add(1);
+        ll.add(2);
+        ll.add(3);
+        System.out.println(ll);
     }
 }

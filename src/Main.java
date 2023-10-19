@@ -3,12 +3,11 @@
  * array 阵列。阵列在内部存储中开辟出的空间是连续分布的，所以可以直接寻找索引对应的偏移量，计算出数据的地址。
  * stack 栈是线性结构。栈的操作是阵列的子集。仅一端增减元素，这一端也称为“栈顶”。LIFO
  * queue 队列是线性结构。队列的操作是阵列的子集。一端（队尾）填充元素（入队），另一端（队首）取出元素（出队）。FIFO
-
- * linked list (LL) 链表是最简单的动态数据结构。链表是离散的，数据存储在E e中，通过各个node中的Node next连接起来的。
+ * linked list (LL) 链表是最简单的动态数据结构。链表是离散的，数据存储在E e中，通过各个node中的Node next连接起来的。链表具有天然的递归结构。
  * 动态数据结构包括 linked list (LL) 链表, hash list (HL) 散列表, skip list (SL) 跳表, binary search tree (BST) 二叉搜索树
  * https://blog.csdn.net/qq_21794823/article/details/118638177#:~:text=%E4%BB%80%E4%B9%88%E6%98%AF%E5%8A%A8%E6%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84,%E8%80%8C%E4%B8%94%E6%95%88%E7%8E%87%E9%83%BD%E5%BE%88%E9%AB%98%E3%80%82
-
  * **树结构**
+ * binary tree 二叉树是动态数据结构。二叉树具有天然的递归结构。
  * 二叉树
  * 二叉搜索树
  * 堆
