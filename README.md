@@ -1,5 +1,7 @@
 # javase
-Implement Typical Algorithms &amp; Data Structures from Sketch
+
+## Overview
+Project javase is a code template in java programming language to help you implement typical algorithms && data Structures from sketch within 14 modules.
 
 * LinearSearch 线性查找
 * SelectionSort 选择排序
