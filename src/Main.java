@@ -9,7 +9,10 @@
  * **树结构**
  * binary tree 二叉树是动态数据结构。二叉树具有天然的递归结构。
  * 二叉树
- * 二叉搜索树
+ * 二叉搜索树 BST
+ * 二叉搜索树实现集合 Set
+ * 二叉搜索树实现映射 Map
+ *
  * 堆
  * B 树
  * AVL
@@ -24,6 +27,7 @@
  * 邻接矩阵
  * 邻接表
  *
+ * reference: https://chasserush.github.io/DataStructureVisualizations/
  * */
 
 

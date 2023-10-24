@@ -1,7 +1,5 @@
 package 排序;
 
-import com.sun.xml.internal.bind.v2.model.annotation.Quick;
-
 public class SortingHelper {
     public static <E extends Comparable<E>> boolean isSorted(E[] arr) {
         for (int i = 1; i < arr.length; i++) {
@@ -42,8 +40,8 @@ public class SortingHelper {
     //3.归并排序(MergeSort) 必须开辟新的空间(NOT in-place), 数据无序 nlogn, 数据有序或近乎有序(极少数数据处于无序状态) n
     //4.快速排序(QuickSort) 本质是一个随机算法, partition 是随机的; E= nlogn
 
-    //注意特殊的数据会影响算法的性能（random, ordered）
-
+    //注意特殊的数据会影响算法的性能（random, sorted, reversed, most the same）
+    //https://www.toptal.com/developers/sorting-algorithms
 
 }
 

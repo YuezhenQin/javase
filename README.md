@@ -52,3 +52,6 @@ Implement Typical Algorithms &amp; Data Structures from Sketch
 16. Leet Code OJ 102. Binary Tree Level Order Traversal [Difficulty: Easy] 
 17. Leet Code OJ 129. Sum Root to Leaf Numbers 
 18. Leet Code OJ 131. Palindrome Partitioning
+
+## Reference
+1.  https://chasserush.github.io/DataStructureVisualizations/
