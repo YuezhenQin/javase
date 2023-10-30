@@ -1,4 +1,4 @@
-package 动态数据结构;
+package 链式结构;
 
 /*
 * 链表的特性
@@ -110,7 +110,7 @@ public class LinkedList<E> {
 
     public boolean contains(E e) {
         Node current = head.next;
-        while (current.next != null) { //无index的遍历，而不是只遍历到index
+        while (current != null) {
             if (current.e.equals(e)) return true;
             current = current.next;
         }
@@ -162,6 +162,19 @@ public class LinkedList<E> {
         return remove(size - 1);
     }
 
+    public void removeElement(E e) {
+        Node prev = head;
+        while (prev != null) {
+            if (prev.next.e.equals(e)) break;
+            prev = prev.next;
+        }
+        if (prev.next != null) {
+            Node delNode = prev.next;
+            prev.next = delNode.next;
+            delNode.next = null;
+            size --;
+        }
+    }
     //删除多个元素
     public E removeElements() {
         return null;

@@ -1,4 +1,4 @@
-package 动态数据结构;
+package 链式结构;
 
 //递归调试 (递归深度、递归深度字符串) 1.画图 2.单步跟踪 3.打印跟踪
 public class Solution4 {

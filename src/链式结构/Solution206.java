@@ -1,4 +1,4 @@
-package 动态数据结构;
+package 链式结构;
 
 //Leetcode 206: Reverse LinkedList Node
 public class Solution206 {

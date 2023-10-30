@@ -1,4 +1,4 @@
-package 动态数据结构.树结构;
+package 链式结构.树结构;
 
 import java.util.*;
 
@@ -14,6 +14,13 @@ import java.util.*;
 * * inOrder()
 * * postOrder()
 *
+* 0层: 1
+* 1层: 2
+* 2层: 4
+* 3层: 8
+* h-1层: 2^(h-1)
+* 总计 h, 总计 2^h-1=n
+* h=log(n+1)
 * */
 public class BST<E extends Comparable<E>> {
     private class Node implements TreePrinter.PrintableNode {
@@ -93,7 +100,7 @@ public class BST<E extends Comparable<E>> {
     }
 
     private Node add(Node node, E e) {
-        //新的递归终止条件
+        //递归终止条件
         if (node == null) {
             size++;
             return new Node(e);

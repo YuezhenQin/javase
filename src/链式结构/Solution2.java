@@ -1,4 +1,4 @@
-package 动态数据结构;
+package 链式结构;
 
 //有fakeHead 和 无fakeHead
 public class Solution2 {

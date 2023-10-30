@@ -1,4 +1,4 @@
-package 动态数据结构.树结构;
+package 链式结构.树结构;
 
 import java.util.ArrayList;
 import java.util.List;

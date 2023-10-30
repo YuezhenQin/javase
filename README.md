@@ -27,7 +27,7 @@ Implement Typical Algorithms &amp; Data Structures from Sketch
 8. Leet Code OJ 57. Insert Interval [Difficulty: Hard] 
 9. Leet Code OJ 65. Valid Number [Difficulty: Hard] 
 10. Leet Code OJ 70. Climbing Stairs [Difficulty: Easy] 
-11. Leet Code OJ 73. Set Matrix Zeroes [Difficulty: Medium] 
+11. Leet Code OJ 73. 链式结构.Set Matrix Zeroes [Difficulty: Medium] 
 12. Leet Code OJ 88. Merge Sorted Array [Difficulty: Easy] 
 13. Leet Code OJ 98. Validate Binary Search Tree [Difficulty: Medium] 
 14. Leet Code OJ 125. Valid Palindrome [Difficulty: Easy] 

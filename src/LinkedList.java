@@ -157,4 +157,33 @@ public class LinkedList<E> {
     public E removeLast() {
         return remove(size - 1);
     }
+
+    public void removeElement(E e) {
+        //错误
+
+        //正确
+        Node prev = head;
+        while (prev.next != null) {
+            if (prev.next.e.equals(e)) {
+                break;
+            }
+            prev = prev.next; //别弄混了
+        }
+        if (prev.next != null) {
+            Node delNode = prev.next;
+            prev.next = prev.next.next; //别弄混了
+            delNode.next = null;
+        }
+
+    }
+
+    public static void main(String[] args) {
+        LinkedList<Integer> ll = new LinkedList<>();
+        ll.addFirst(10);
+        ll.addFirst(2);
+        ll.addFirst(1);
+        System.out.println(ll);
+        ll.removeElement(2);
+        System.out.println(ll);
+    }
 }
