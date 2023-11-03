@@ -23,12 +23,8 @@ Project javase is a code template in java programming language to help you imple
 
 | Set      | Map     |  
 | -------- | ------- | 
-| * void add(E)  |  10/89   |     
+| * void add(E)\n * void remove(E)  |  10/89   |     
 
-
-| JavaSE   | JavaEE  | # Progress |
-| -------- | ------- | ------- |
-| 140/229  |  10/89   |     |
 
 
 
