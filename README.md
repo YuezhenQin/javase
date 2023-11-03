@@ -22,6 +22,7 @@ Project javase is a code template in java programming language to help you imple
 | LL      | BST     |  
 | -------- | ------- | 
 | E e<br>Node next | E e<br>Node left<br>Node right  |  
+| Node head<br>int size| Node root<br>int size |
 
 * Set 集合
 * Map 映射
