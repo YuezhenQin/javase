@@ -13,7 +13,7 @@ Project javase is a code template in java programming language to help you imple
 * Queue 
   * ARQueue
   * LLQueue
-* CCQueue 循环队列
+* CircularQueue 循环队列
 * PriorityQueue 优先队列 
 * LinkedList 
 * ListNode
