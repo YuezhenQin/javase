@@ -104,6 +104,17 @@ public class LLMap<K, V> implements Map<K, V>{
         return null;
     }
 
-
-
+    public static void main(String[] args) {
+        LLMap<String, Integer> llMap = new LLMap<>();
+        llMap.add("a", 1);
+        llMap.add("b", 2);
+        System.out.println(llMap.isEmpty());
+        System.out.println(llMap.get("b"));
+        llMap.remove("b");
+        System.out.println(llMap.get("b"));
+        llMap.set("a",99);
+        System.out.println(llMap.get("a"));
+        llMap.remove("a");
+        System.out.println(llMap.isEmpty());
+    }
 }

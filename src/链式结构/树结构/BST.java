@@ -3,9 +3,10 @@ package 链式结构.树结构;
 import java.util.*;
 
 /*
-* 1.二分搜索树是二叉树
-* 2.二分搜索树的节点的值: 大于其左子树的所有节点的值，小于其右子树所有节点的值
-* 3.每一棵子树也是二分搜索树
+* 1.二分搜索树是二叉树。
+* 2.二分搜索树的节点的值: 大于其左子树的所有节点的值，小于其右子树所有节点的值。
+* 3.每一棵子树也是二分搜索树。
+* 4.有多深就搜索几次。
 *
 * add()
 * contains()
@@ -224,10 +225,12 @@ public class BST<E extends Comparable<E>> {
         if (size == 0) throw new IllegalArgumentException("BST is empty");
         return findMin(root).e;
     }
+
     public Node findMin(Node node) {
         if (node.left == null) return node;
         return findMin(node.left);
     }
+
     //寻找二分搜索树中的最大值
     public E findMax() {
         if (size == 0) throw new IllegalArgumentException("BST is empty");
@@ -237,6 +240,7 @@ public class BST<E extends Comparable<E>> {
         if (node.right == null) return node;
         return findMax(node.right);
     }
+
     //删除二分搜索树中的最小值
     public E removeMin() {
         E ret = findMin();
@@ -326,7 +330,6 @@ public class BST<E extends Comparable<E>> {
 
         if (e.compareTo(node.e) < 0) {
             node.left = remove(node.left, e);
-            //返回结果树
             return node;
         } else if (e.compareTo(node.e) > 0) {
             node.right = remove(node.right, e);
@@ -351,9 +354,6 @@ public class BST<E extends Comparable<E>> {
             return precursor;
         }
     }
-
-
-    
 
     public static void main(String[] args) {
         BST<Integer> bst = new BST<>();

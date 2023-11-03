@@ -5,15 +5,20 @@ Implement Typical Algorithms &amp; Data Structures from Sketch
 * SelectionSort 选择排序
 * InsertionSort 插入排序
 * Array 数组
-* ARStack 栈
-* ARQueue 队列
-* CCARQueue 循环队列
+* ARStack 数组栈
+* ARQueue 数组队列
+* CCARQueue 数组循环队列
 * LinkedList 链表
-* LLStack 栈
-* LLQueue 队列
+* LLStack 链表栈
+* LLQueue 链表队列
 * ListNode
-* Recursion 递归函数
+* Recursion 递归构造
 * MergeSort 归并排序
+* QuickSort 快速排序
+* BST 二分搜索树
+* Set 集合
+* Map 映射
+
 
 
 出现频度为5： 

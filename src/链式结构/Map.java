@@ -8,4 +8,5 @@ public interface Map<K, V> {
     void set(K key, V newValue);
     int getSize();
     boolean isEmpty();
+
 }
