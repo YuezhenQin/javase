@@ -18,14 +18,16 @@ Project javase is a code template in java programming language to help you imple
 * MergeSort 归并排序
 * QuickSort 快速排序
 * BST 二分搜索树
+* Set 集合 Map 映射
+* Heap 堆
+* PriorityQueue 优先队列
 
 | LL      | BST     |  
 | -------- | ------- | 
 | E e<br>Node next | E e<br>Node left<br>Node right  |  
 | Node head<br>int size| Node root<br>int size |
 
-* Set 集合
-* Map 映射
+
 
 | Set      | Map     |  
 | -------- | ------- | 
