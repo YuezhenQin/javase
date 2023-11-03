@@ -18,7 +18,7 @@ Project javase is a code template in java programming language to help you imple
 
 |Stack     |Queue     |  
 | -------- | ------- | 
-||void enqueue(E)<br>E dequeue()<br>E getFirst()<br>int getSize()<br>boolean isEmpty()|
+|void push(E)<br>E pop()<br>E peek()<br>int getSize()<br>boolean isEmpty()|void enqueue(E)<br>E dequeue()<br>E getFirst()<br>int getSize()<br>boolean isEmpty()|
 * LinkedList 
 * ListNode
 * Recursion 递归构造
