@@ -15,8 +15,10 @@ Project javase is a code template in java programming language to help you imple
   * LLQueue
   * CircularQueue 循环队列
   * PriorityQueue 优先队列
- 
 
+|Stack     |Queue     |  
+| -------- | ------- | 
+||void enqueue(E)<br>E dequeue()<br>E getFirst()<br>int getSize()<br>boolean isEmpty()|
 * LinkedList 
 * ListNode
 * Recursion 递归构造
