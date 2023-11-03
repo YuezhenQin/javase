@@ -7,12 +7,15 @@ Project javase is a code template in java programming language to help you imple
 * SelectionSort 选择排序
 * InsertionSort 插入排序
 * Array 数组
-* ARStack 数组栈
-* ARQueue 数组队列
-* CCARQueue 数组循环队列
+* Stack 栈
+  * ARStack
+  * LLStack
+* Queue 队列
+  * ARQueue
+  * LLQueue
+* CCQueue 循环队列
+* PriorityQueue 优先队列 
 * LinkedList 链表
-* LLStack 链表栈
-* LLQueue 链表队列
 * ListNode
 * Recursion 递归构造
 * MergeSort 归并排序
@@ -20,7 +23,7 @@ Project javase is a code template in java programming language to help you imple
 * BST 二分搜索树
 * Set 集合 Map 映射
 * Heap 堆
-* PriorityQueue 优先队列
+
 
 | LL      | BST     |  
 | -------- | ------- | 
