@@ -6,16 +6,16 @@ Project javase is a code template in java programming language to help you imple
 * LinearSearch 线性查找
 * SelectionSort 选择排序
 * InsertionSort 插入排序
-* Array 数组
-* Stack 栈
+* Array 
+* Stack 
   * ARStack
   * LLStack
-* Queue 队列
+* Queue 
   * ARQueue
   * LLQueue
 * CCQueue 循环队列
 * PriorityQueue 优先队列 
-* LinkedList 链表
+* LinkedList 
 * ListNode
 * Recursion 递归构造
 * MergeSort 归并排序
