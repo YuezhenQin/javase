@@ -23,7 +23,7 @@ Project javase is a code template in java programming language to help you imple
 
 | Set      | Map     |  
 | -------- | ------- | 
-| * void add(E)<br>* void remove(E)  |  10/89   |     
+|void add(E)<br>void remove(E)<br>boolean contains(E)<br>int getSize()<br>boolean isEmpty()  | void add(K, V)<br>V remove(K)<br>boolean contains(K)<br>V get(K)<br>void set(K,V)<br>int getSize()<br>boolean isEmpty()   |     
 
 
 
