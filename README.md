@@ -1,5 +1,7 @@
 # javase
-Implement Typical Algorithms &amp; Data Structures from Sketch
+
+## Overview
+Project javase is a code template in java programming language to help you implement typical algorithms && data Structures from sketch within 14 modules.
 
 * LinearSearch 线性查找
 * SelectionSort 选择排序
@@ -21,6 +23,7 @@ Implement Typical Algorithms &amp; Data Structures from Sketch
 
 
 
+## Problem Set
 出现频度为5： 
 1. Leet Code OJ 1. Two Sum [Difficulty: Easy] 
 2. Leet Code OJ 8. String to Integer (atoi) [Difficulty: Easy] 
