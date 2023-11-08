@@ -6,20 +6,40 @@ Project javase is a code template in java programming language to help you imple
 * LinearSearch 线性查找
 * SelectionSort 选择排序
 * InsertionSort 插入排序
-* Array 数组
-* ARStack 数组栈
-* ARQueue 数组队列
-* CCARQueue 数组循环队列
-* LinkedList 链表
-* LLStack 链表栈
-* LLQueue 链表队列
+* Array 
+* Stack 
+  * ARStack
+  * LLStack
+* Queue 
+  * ARQueue
+  * LLQueue
+  * CircularQueue 循环队列
+  * PriorityQueue 优先队列
+
+|Stack     |Queue     |  
+| -------- | ------- | 
+|void push(E)<br>E pop()<br>E peek()<br>int getSize()<br>boolean isEmpty()|void enqueue(E)<br>E dequeue()<br>E getFirst()<br>int getSize()<br>boolean isEmpty()|
+* LinkedList 
 * ListNode
 * Recursion 递归构造
 * MergeSort 归并排序
 * QuickSort 快速排序
 * BST 二分搜索树
-* Set 集合
-* Map 映射
+* Set 集合 Map 映射
+* Heap 堆
+
+
+| LL      | BST     |  
+| -------- | ------- | 
+| E e<br>Node next | E e<br>Node left<br>Node right  |  
+| Node head<br>int size| Node root<br>int size |
+
+
+
+| Set      | Map     |  
+| -------- | ------- | 
+|void add(E)<br>void remove(E)<br>boolean contains(E)<br>int getSize()<br>boolean isEmpty()  | void add(K, V)<br>V remove(K)<br>boolean contains(K)<br>V get(K)<br>void set(K,V)<br>int getSize()<br>boolean isEmpty()   |     
+
 
 
 
