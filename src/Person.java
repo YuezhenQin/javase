@@ -3,11 +3,15 @@ import 排序.Array;
 public class Person implements Comparable<Person> {
     private String name;
     private int rank;
-
     public Person(String name, int rank) {
         this.name = name;
         this.rank = rank;
     }
+
+    public Person() {
+
+    }
+
 
     /* 不同类子类对父类覆盖（重载）, 一个类内重写 */
     @Override

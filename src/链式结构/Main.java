@@ -55,7 +55,6 @@ public class Main {
         System.out.println("Frequency of PRIDE: " + map.get("pride"));
         System.out.println("Frequency of PREJUDICE: " + map.get("prejudice"));
 
-
         long endTime = System.nanoTime();
         double time = (endTime - startTime) / 1000000000.0;
         System.out.println(map.getClass().getSimpleName() + ":" + time);
@@ -100,6 +99,5 @@ public class Main {
 
         BSTMap<String, Integer> bstMap = new BSTMap<>();
         testMap(bstMap, path1);
-
     }
 }
