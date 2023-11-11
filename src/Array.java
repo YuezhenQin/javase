@@ -35,10 +35,10 @@
  * */
 
 
-/* ● ○ ■ □ ▼ ▽
-* ○ 局限1.固定的数据类型->泛型 1.7
-* ○ 局限2.固定的容量->动态地伸缩容量 1.8
-* ○ 局限3.连续的addLast()和removeLast()造成复杂度震荡->Lazy Resize 1.10
+/*
+* 局限1.固定的数据类型->泛型 1.7
+* 局限2.固定的容量->动态地伸缩容量 1.8
+* 局限3.连续的addLast()和removeLast()造成复杂度震荡->Lazy Resize 1.10
 * */
 
 public class Array<E> {
@@ -154,6 +154,13 @@ public class Array<E> {
     }
 
     public void removeAllElement(E e) {
+    }
+
+    public void swap(int i, int j) {
+        if (i < 0 || i >= size || j < 0 || j>=size) throw new IllegalArgumentException("index is out of range");
+        E tmp = data[i];
+        data[i] = data[j];
+        data[i] = tmp;
     }
 
     @Override
