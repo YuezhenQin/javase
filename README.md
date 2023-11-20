@@ -1,4 +1,5 @@
 # javase
+## Why Now?
 
 ## Overview
 Project javase is a code template in java programming language to help you implement typical algorithms && data Structures from sketch within 14 modules.
