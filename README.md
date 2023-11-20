@@ -1,4 +1,7 @@
 # javase
+
+## What is Java?
+
 ## Why Now?
 
 ## Overview
