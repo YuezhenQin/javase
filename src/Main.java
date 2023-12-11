@@ -208,5 +208,6 @@ public class Main {
         LLStack<Integer> llStack = new LLStack<>();
         testStack(arrStack, count); //阵列栈
         testStack(llStack, count); //链表栈
+        System.out.println("Lixiang main");
      }
 }
