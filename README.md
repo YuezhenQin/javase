@@ -88,3 +88,5 @@ Project javase is a code template in java programming language to help you imple
 ## Reference
 1.  https://chasserush.github.io/DataStructureVisualizations/
 LixiangZhao commit
+
+LixiangZhao has been invited as a collaborator of this project.
