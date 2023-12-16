@@ -27,6 +27,10 @@ This project aims to provide a code template to implement typical algorithms && 
 * Set 集合 Map 映射
 * Heap 堆
 
+LinkedList
+<img width="841" alt="msedge_GOqQGalXT2" src="https://github.com/YuezhenQin/javase/assets/37969376/111bf779-421c-46e2-a225-d867db23116e">
+
+
 
 | LL      | BST     |  
 | -------- | ------- | 
