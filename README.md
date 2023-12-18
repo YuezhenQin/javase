@@ -5,8 +5,11 @@ This project aims to provide a code template to implement typical algorithms && 
 * LinearSearch 线性查找
 * SelectionSort 选择排序
 * InsertionSort 插入排序
-* Array 
-* Stack 
+ 
+* Array
+* LinkedList
+ 
+* Stack (将增删操作限制为单侧，并且数据满足先入先出)
   * ARStack
   * LLStack
 * Queue 
