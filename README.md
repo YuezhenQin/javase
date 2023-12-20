@@ -1,6 +1,6 @@
 # javase
 ## Overview
-This project aims to provide a code template to implement typical algorithms && data Structures from sketch within 14 sections.
+This project is a collection of fully functional EXAMPLEs written in Java programming language to show how to implement 14 typical algorithms && data Structures from sketch.
 
 * LinearSearch 线性查找
 * SelectionSort 选择排序
