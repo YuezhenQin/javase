@@ -1,6 +1,6 @@
 # javase
 ## Overview
-This project is a collection of fully functional EXAMPLEs written in Java programming language to show how to implement 14 typical algorithms && data Structures from sketch.
+This project is a collection of fully functional examples written in Java programming language to show how to implement 14 typical algorithms && data Structures from sketch.
 
 * LinearSearch 线性查找
 * SelectionSort 选择排序
