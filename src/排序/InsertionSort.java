@@ -2,6 +2,9 @@ package 排序;
 
 import java.util.Arrays;
 
+//插入排序: 数据一分为二，不断将无序部分的第一个元素插入有序部分。
+//希尔排序: 对间距为n/2, n/4, n/8 ... 1 的所有数据做插入排序。
+
 public class InsertionSort<E> {
     private InsertionSort() {}
     public static <E extends Comparable<E>> void sort(E[] arr) {
@@ -14,7 +17,6 @@ public class InsertionSort<E> {
 //                    break;
 //                }
 //            }
-
             //逻辑“与” && 连接循环终止条件，内层循环提前终止
             for (int j = i; j - 1 >= 0 && arr[j].compareTo(arr[j-1]) < 0; j--) { //j索引从后向前遍历,不会访问i索引没有遍历到的元素
                 swap(arr, j, j-1);
@@ -40,7 +42,6 @@ public class InsertionSort<E> {
             }
         }
     }
-
 
 
     private static <E> void swap(E[] arr, int i, int j) {

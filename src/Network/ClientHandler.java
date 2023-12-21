@@ -1,4 +1,4 @@
-package 网络;
+package Network;
 
 import java.io.BufferedReader;
 import java.io.IOException;

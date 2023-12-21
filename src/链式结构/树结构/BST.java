@@ -186,7 +186,7 @@ public class BST<E extends Comparable<E>> {
         return sb.toString();
     }
 
-    //二叉树的中序遍历
+    //二叉树的中序遍历(左中右)
     public void inOrder() {
         inOrder(root);
     }
@@ -198,7 +198,7 @@ public class BST<E extends Comparable<E>> {
     }
 
 
-    //二叉树的后序遍历 (先处理该节点的所有孩子节点，再处理该节点 )
+    //二叉树的后序遍历 (左右中)
     public void postOrder() {
         postOrder(root);
     }

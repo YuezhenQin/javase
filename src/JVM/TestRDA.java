@@ -3,7 +3,7 @@ package JVM;
 import java.util.HashMap;
 
 //字符串常量池
-public class TestRuntimeDataArea {
+public class TestRDA {
     public static void main(String[] args) {
         //字符串常量池的数据结构为 StringTable
         HashMap<String, Integer> map = new HashMap<>();
@@ -13,10 +13,8 @@ public class TestRuntimeDataArea {
         String str = "Hello";
         System.out.println("Hello.hashCode()=" + "Hello".hashCode());
         System.out.println("str.hashCode()=" + str.hashCode());
-        System.out.println("World.hashCode()=" + "World".hashCode());
         //涉及到符号引用的字符串，作为新的对象在运行阶段放入堆内存的其他区域中
         String str1 = new String("Hello");
-        System.out.println(str==str1);
-
+        System.out.println(str == str1);
     }
 }

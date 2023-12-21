@@ -27,7 +27,16 @@ public class Solution75 {
         arr[j] = tmp;
     }
 
+    public void sortColors(int[] nums, boolean tmp) {
+        int[] cnt = new int[3];
+        for (int num: nums) {
+            cnt[num] ++;
+        }
+    }
+
+
     public static void main(String[] args) {
+
 
     }
 }

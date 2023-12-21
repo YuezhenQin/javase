@@ -10,20 +10,29 @@
  * ** 树结构、图结构、哈希表、堆 **
  * binary tree 二叉树是动态数据结构。二叉树具有天然的递归结构。
  * 二叉树
- * BST 二叉搜索树是动态数据结构。二叉搜索树是若数据近乎有序，则二叉搜索树退化成链表{1,2,3,4,5}。解决方案是平衡二叉树。
+ * BST 二叉搜索树是动态数据结构。二叉搜索树是若数据近乎有序，则二叉搜索树退化成链表{1,2,3,4,5}。解决方案是一颗平衡二叉树。
  * 二叉搜索树实现集合 BSTSet
- * Set 集合。集合的特性是不存储重复元素，适用于词汇量统计。
- * Map 映射。映射是存储键值对的数据结构。适用于词频统计。
+ * Set 集合。集合的特性是不存储重复元素。词汇量统计。
+ * Map 映射。映射是维持键值对的数据结构。词频统计。
  *
- * Heap; binary heap 二叉堆是满足一些特殊性质的二叉树。每一个节点都大于等于它的孩子节点
+ * 完全二叉树：深度为h，各层 (1～h-1) 的结点数都达到最大个数，第 h 层所有的结点都连续集中在最左边 (left-hand side)。
  * 满二叉树：深度为k且有2^k-1个结点的二叉树称为满二叉树。满二叉树是一颗特殊的完全二叉树。
- * 完全二叉树：设二叉树的深度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第 h 层所有的结点都连续集中在最左边。
+ * 平衡二叉树：深度差不超过 1 的树，空树也是平衡二叉树的一种。
+ *
+ * Heap; binary heap 二叉堆是满足一些特殊性质的二叉树。每一个节点都大于等于它的孩子节点。
+ * 最大堆，最小堆（堆是一颗平衡二叉树）
+ * 优先队列
+ *
+ * 线段树（线段树是一颗平衡二叉树，每一个节点存储的是一个线段(区间)，支持查询一个区间[i..j]的最大值最小值数字和）：基于区间的统计查询
+ *
+ * Trie O(w)
+ *
  * AVL
  * 红黑树
  * K-D 树
  * 并查集
  * H 树
- * 线段树
+
 
  * **图结构**
  * 邻接矩阵
@@ -95,6 +104,8 @@ public class Main {
 
         System.out.println(stack.getClass() + ": time:" + time + "s size:" + count);
     }
+
+
 
 
     public static void main(String[] args) {
@@ -182,7 +193,7 @@ public class Main {
         }
 
         /* CircularArrayQueue Test */
-        CircularArrayQueueReview<Integer> cArrayQueue = new CircularArrayQueueReview<>();
+        CircularARQueueReview<Integer> cArrayQueue = new CircularARQueueReview<>();
         for(int i = 0; i < 20; i++) {
             cArrayQueue.enqueue(i);
             System.out.println("enqueued:" + cArrayQueue);
@@ -197,7 +208,7 @@ public class Main {
         int count = 100000;
         ARQueue<Integer> aqueue = new ARQueue<>();
         LLQueue<Integer> llqueue = new LLQueue<>();
-        CircularArrayQueue<Integer> cqueue = new CircularArrayQueue<>();
+        CircularARQueue<Integer> cqueue = new CircularARQueue<>();
 
         testQueue(aqueue, count); //AR队列
         testQueue(llqueue,count); //LL队列
@@ -208,5 +219,22 @@ public class Main {
         LLStack<Integer> llStack = new LLStack<>();
         testStack(arrStack, count); //阵列栈
         testStack(llStack, count); //链表栈
+
+        //SegmentTree
+        Integer[] r = {-2, 0, 3, -5, 2, -1};
+        SegmentTree<Integer> segmentTree = new SegmentTree<>(r, (m, n) -> m + n);
+        System.out.println(segmentTree);
+
+        System.out.println(segmentTree.query(0, 2));
+        System.out.println(segmentTree.query(2, 5));
+        System.out.println(segmentTree.query(0, 5));
+
+//        SegmentTree<Integer> tree = new SegmentTree<>(r, new Merger<Integer>() {
+//             @Override
+//            public Integer merge(Integer a, Integer b) {
+//                return a + b;
+//            }
+//        });
+
      }
 }

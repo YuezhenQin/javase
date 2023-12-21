@@ -109,6 +109,7 @@ public class BSTMap<K extends Comparable<K>,V> implements Map<K,V> {
         }
         return null;
     }
+
     private Node remove(Node node, K key) {
         if (node == null) {
             return null;

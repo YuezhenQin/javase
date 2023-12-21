@@ -1,7 +1,8 @@
-package 网络;
+package Network;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -17,7 +18,7 @@ public class Server {
             ss = new ServerSocket(8888);
             while(true) {
                 //2. 等待来自客户端的连接请求
-                System.out.println("等待来自客户端的连接请求...");
+                System.out.println("服务端启动并等待来自客户端的连接请求...");
                 s = ss.accept(); // 阻塞在 accept()
                 System.out.println("New client connected: " + s.getInetAddress().getHostAddress());
                 //若有一个客户端连接成功，则启动一个新的线程为之服务

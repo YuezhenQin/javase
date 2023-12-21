@@ -41,6 +41,8 @@
 * 局限3.连续的addLast()和removeLast()造成复杂度震荡->Lazy Resize 1.10
 * */
 
+import java.util.Arrays;
+
 public class Array<E> {
     /*Array的变量*/
     private E[] data; //容器
@@ -160,7 +162,7 @@ public class Array<E> {
         if (i < 0 || i >= size || j < 0 || j>=size) throw new IllegalArgumentException("index is out of range");
         E tmp = data[i];
         data[i] = data[j];
-        data[i] = tmp;
+        data[j] = tmp;
     }
 
     @Override
@@ -182,6 +184,14 @@ public class Array<E> {
             newData[i] = data[i];
         }
         data = newData;
+    }
+
+    public static void main(String[] args) {
+        Array<Integer> arr = new Array<>();
+        for (int i = 5; i >= 0; i--) {
+            arr.addLast(i);
+        }
+        System.out.println(arr);
     }
 }
 

@@ -1,4 +1,4 @@
-/* 操作         队列          循环队列
+/* 操作         AR队列        AR循环队列     AR优先队列
  * 入队 enqueue O(1) 均摊     O(1) 均摊
  * 出队 dequeue O(n)         O(1) 均摊
  *     peek    O(1)         O(1)

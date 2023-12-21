@@ -1,14 +1,14 @@
-public class CircularArrayQueue<E> implements Queue<E> {
+public class CircularARQueue<E> implements Queue<E> {
     private E[] data;
     private int head, tail, size;
 
-    public CircularArrayQueue(int capacity) {
+    public CircularARQueue(int capacity) {
         data = (E[]) new Object[capacity + 1];
         head = 0;
         tail = 0;
         size = 0;
     }
-    public CircularArrayQueue() {
+    public CircularARQueue() {
         this(10);
     }
 

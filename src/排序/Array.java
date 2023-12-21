@@ -40,11 +40,19 @@ public class Array<E> { /* 名称Array 数据类型E */
 
     //构造函数
     public Array(int capacity) { //容器的容量
-        data = (E[]) new Object[capacity]; /* E[capacity]*/
+        data = (E[]) new Object[capacity];
         size = 0;
     }
     public Array() {
         this(10);
+    }
+
+    public Array(E[] arr) {
+        data = (E[]) new Object[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            data[i] = arr[i];
+        }
+        size = arr.length;
     }
 
     public int getSize() {
@@ -147,6 +155,12 @@ public class Array<E> { /* 名称Array 数据类型E */
     public void removeAllElement(E e) {
     }
 
+    public void swap(int i, int j) {
+        E tmp = data[i];
+        data[i] = tmp;
+        data[j] = data[i];
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,6 +174,7 @@ public class Array<E> { /* 名称Array 数据类型E */
         return sb.toString();
     }
 
+    //如果超出一定的大小会resize，resize时会发生什么? 根据接收到的参数开辟一个新的数组
     private void resize(int newCapacity) {
         E[] newData = (E[]) new Object[newCapacity];
         for (int i = 0; i < size; i++) { /* i < size 而不是 i < data.length */

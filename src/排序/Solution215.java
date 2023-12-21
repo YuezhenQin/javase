@@ -1,16 +1,19 @@
 package 排序;
 
-//QuickSort Partition
+//找到第k大/第k小的元素: 用
 
+//在n个元素中找到最小的k个元素: 用最大堆维护k个最小的元素，若新的数据比k个最小元素中的最大值还小，则替换
+
+import java.util.PriorityQueue;
 import java.util.Random;
 
 public class Solution215 {
-    public int findKthLargest(int[] nums, int k) {
-        Random rand = new Random();
-        //第1大元素是第nums.length-1小元素
-        //第k大元素是第nums.length-k小元素
-        return selectK(nums, 0, nums.length - 1, nums.length - k, rand);
-    }
+//    public int findKthLargest(int[] nums, int k) {
+//        Random rand = new Random();
+//        //第1大元素是第nums.length-1小元素
+//        //第k大元素是第nums.length-k小元素
+//        return selectK(nums, 0, nums.length - 1, nums.length - k, rand);
+//    }
 
     //非递归实现 selectK()
     private int selectK(int[] arr, int k, Random rand) {
@@ -69,6 +72,23 @@ public class Solution215 {
         int tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = tmp;
+    }
+
+    public int findKthLargest(int[] nums, int k) {
+        //将前面的k个元素加入优先队列
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for (int i = 0; i < k; i++) {
+            pq.add(nums[i]);
+        }
+        //pq的底层是最小堆
+        for (int i = k; i < nums.length; i++) {
+            //若pq不为空且当前元素大于优先队列队首元素（比最大的k个元素中最小的元素 大）
+            if (!pq.isEmpty() && nums[i] > pq.peek()) {
+                pq.remove();
+                pq.add(nums[i]);
+            }
+        }
+        return pq.peek();
     }
 
     public static void main(String[] args) {

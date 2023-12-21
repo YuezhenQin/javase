@@ -134,8 +134,10 @@ public class QuickSort {
         //快速排序问题2: 包含大量重复元素的数组
         arr1 = ArrayGenerator.generateRandomArray(size, 1);
         arr2 = Arrays.copyOf(arr1, arr1.length);
-//        SortingHelper.test("QuickSort", arr1);
-        SortingHelper.test("QuickSort2ways", arr1);
-        SortingHelper.test("QuickSort3ways", arr2);
+        arr3 = Arrays.copyOf(arr1, arr1.length);
+
+        SortingHelper.test("QuickSort", arr1);
+        SortingHelper.test("QuickSort2ways", arr2);
+        SortingHelper.test("QuickSort3ways", arr3);
     }
 }
