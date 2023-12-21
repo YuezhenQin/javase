@@ -1,13 +1,15 @@
-# javase
-
+# Java SE EXAMPLE Project
 ## Overview
-Project javase is a code template in java programming language to help you implement typical algorithms && data Structures from sketch within 14 modules.
+This project is a collection of fully functional examples written in Java programming language to show how to implement 14 typical algorithms && data Structures from sketch.
 
 * LinearSearch 线性查找
 * SelectionSort 选择排序
 * InsertionSort 插入排序
-* Array 
-* Stack 
+ 
+* Array
+* LinkedList
+ 
+* Stack (将增删操作限制为单侧，并且数据满足先入先出)
   * ARStack
   * LLStack
 * Queue 
@@ -28,6 +30,10 @@ Project javase is a code template in java programming language to help you imple
 * Set 集合 Map 映射
 * Heap 堆
 
+LinkedList
+<img width="841" alt="msedge_GOqQGalXT2" src="https://github.com/YuezhenQin/javase/assets/37969376/111bf779-421c-46e2-a225-d867db23116e">
+
+
 
 | LL      | BST     |  
 | -------- | ------- | 
@@ -39,6 +45,29 @@ Project javase is a code template in java programming language to help you imple
 | Set      | Map     |  
 | -------- | ------- | 
 |void add(E)<br>void remove(E)<br>boolean contains(E)<br>int getSize()<br>boolean isEmpty()  | void add(K, V)<br>V remove(K)<br>boolean contains(K)<br>V get(K)<br>void set(K,V)<br>int getSize()<br>boolean isEmpty()   |     
+
+
+## Stack
+* ARStack
+* LLStack (栈内元素数量不可预料，时大时小)
+## Queue
+* Deque
+* PriorityQueue
+* BlockingQueue (ARBlockingQueue, LLBlockingQueue, PriorityBlockingQueue)
+
+## List
+* ArrayList
+* LinkedList
+* Vector
+## Set
+HashSet
+SortedSet, TreeSet
+ConcurrentSkipListSet
+
+## Map
+HashMap
+TreeMap
+ConcurrentHashMap
 
 
 
@@ -83,3 +112,6 @@ Project javase is a code template in java programming language to help you imple
 
 ## Reference
 1.  https://chasserush.github.io/DataStructureVisualizations/
+LixiangZhao commit
+
+LixiangZhao has been invited as a collaborator of this project.

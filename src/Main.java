@@ -41,41 +41,42 @@
  * reference: https://chasserush.github.io/DataStructureVisualizations/
  * */
 
-
 import java.util.Random;
 
 public class Main {
-//    public static boolean isValid(String s) {
-//        ArrayStack<Character> stack = new ArrayStack<>();
-//        for (int i = 0; i < s.length(); i++) {
-//            char c = s.charAt(i);
-//            if (c == '(' || c == '[' || c == '{') stack.push(c);
-//            else {
-//                if (stack.isEmpty()) return false;
-//                char top = stack.pop();
-//                if (c == ')' && top != '(' ) return false;
-//                if (c == ']' && top != '[' ) return false;
-//                if (c == '}' && top != '{' ) return false;
-//            }
-//        }
-//        return stack.isEmpty();
-//    }
+    // public static boolean isValid(String s) {
+    // ArrayStack<Character> stack = new ArrayStack<>();
+    // for (int i = 0; i < s.length(); i++) {
+    // char c = s.charAt(i);
+    // if (c == '(' || c == '[' || c == '{') stack.push(c);
+    // else {
+    // if (stack.isEmpty()) return false;
+    // char top = stack.pop();
+    // if (c == ')' && top != '(' ) return false;
+    // if (c == ']' && top != '[' ) return false;
+    // if (c == '}' && top != '{' ) return false;
+    // }
+    // }
+    // return stack.isEmpty();
+    // }
     public static boolean isValid(String str) {
         ARStack<Character> stack = new ARStack<>();
-        for (int i=0; i < str.length(); i++) {
+        for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
-            if (c=='{' ||str.charAt(i)=='[' || str.charAt(i)=='(') {
+            if (c == '{' || str.charAt(i) == '[' || str.charAt(i) == '(') {
                 stack.push(c);
             } else {
-                if (stack.isEmpty()) return false;
+                if (stack.isEmpty())
+                    return false;
                 char topc = stack.pop();
-                if ((c =='}' && topc !='{') || (c ==']' && topc !='[') || (c ==')' && topc !='(')) return false;
+                if ((c == '}' && topc != '{') || (c == ']' && topc != '[') || (c == ')' && topc != '('))
+                    return false;
             }
         }
         return stack.isEmpty();
     }
 
-    //测试队列运行size个enqueue和dequeue操作所需要的时间。
+    // 测试队列运行size个enqueue和dequeue操作所需要的时间。
     private static void testQueue(Queue<Integer> queue, int count) {
         long startTime = System.nanoTime();
         Random rand = new Random();
@@ -104,9 +105,6 @@ public class Main {
 
         System.out.println(stack.getClass() + ": time:" + time + "s size:" + count);
     }
-
-
-
 
     public static void main(String[] args) {
         /* Array Test */
@@ -152,7 +150,6 @@ public class Main {
         arr.remove(1);
         System.out.println(arr);
 
-
         /* Stack Test */
         ARStack<Integer> stack = new ARStack<>();
         stack.push(10);
@@ -172,7 +169,7 @@ public class Main {
 
         /* Queue Test */
         ARQueue<Integer> queue = new ARQueue<>();
-        //入队3个元素，出队1个元素
+        // 入队3个元素，出队1个元素
         for (int i = 0; i < 10; i++) {
             queue.enqueue(i);
             System.out.println(queue);
@@ -194,7 +191,7 @@ public class Main {
 
         /* CircularArrayQueue Test */
         CircularARQueueReview<Integer> cArrayQueue = new CircularARQueueReview<>();
-        for(int i = 0; i < 20; i++) {
+        for (int i = 0; i < 20; i++) {
             cArrayQueue.enqueue(i);
             System.out.println("enqueued:" + cArrayQueue);
             if (i % 3 == 0) {
@@ -203,25 +200,24 @@ public class Main {
             }
         }
 
-
-        //AR队列、循环队列、LL队列的性能比较
+        // AR队列、循环队列、LL队列的性能比较
         int count = 100000;
         ARQueue<Integer> aqueue = new ARQueue<>();
         LLQueue<Integer> llqueue = new LLQueue<>();
         CircularARQueue<Integer> cqueue = new CircularARQueue<>();
 
-        testQueue(aqueue, count); //AR队列
-        testQueue(llqueue,count); //LL队列
-        testQueue(cqueue, count); //循环AR队列
+        testQueue(aqueue, count); // AR队列
+        testQueue(llqueue, count); // LL队列
+        testQueue(cqueue, count); // 循环AR队列
 
-        //ARStack与LLStack的性能比较
+        // ARStack与LLStack的性能比较
         ARStack<Integer> arrStack = new ARStack<>();
         LLStack<Integer> llStack = new LLStack<>();
-        testStack(arrStack, count); //阵列栈
-        testStack(llStack, count); //链表栈
+        testStack(arrStack, count); // 阵列栈
+        testStack(llStack, count); // 链表栈
 
-        //SegmentTree
-        Integer[] r = {-2, 0, 3, -5, 2, -1};
+        // SegmentTree
+        Integer[] r = { -2, 0, 3, -5, 2, -1 };
         SegmentTree<Integer> segmentTree = new SegmentTree<>(r, (m, n) -> m + n);
         System.out.println(segmentTree);
 
@@ -229,12 +225,14 @@ public class Main {
         System.out.println(segmentTree.query(2, 5));
         System.out.println(segmentTree.query(0, 5));
 
-//        SegmentTree<Integer> tree = new SegmentTree<>(r, new Merger<Integer>() {
-//             @Override
-//            public Integer merge(Integer a, Integer b) {
-//                return a + b;
-//            }
-//        });
+        // SegmentTree<Integer> tree = new SegmentTree<>(r, new Merger<Integer>() {
+        // @Override
+        // public Integer merge(Integer a, Integer b) {
+        // return a + b;
+        // }
+        // });
 
-     }
+        System.out.println("Lixiang main");
+
+    }
 }
