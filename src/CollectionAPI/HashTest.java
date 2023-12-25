@@ -1,4 +1,4 @@
-package JCL;
+package CollectionAPI;
 import 排序.Person;
 
 //1.hashCode(k1)

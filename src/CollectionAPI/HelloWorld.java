@@ -1,4 +1,4 @@
-package JCL;
+package CollectionAPI;
 
 public class HelloWorld {
     //Code with me

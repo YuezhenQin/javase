@@ -1,4 +1,4 @@
-package JCL;
+package CollectionAPI;
 
 import java.util.*;
 
@@ -19,7 +19,7 @@ import java.util.*;
 //HashMap底层是HashTable
 //TreeMap底层是红黑树
 
-public class MapTest {
+public class HashMapDemo {
     //Frequency
     public static void main(String[] args) {
         Map<String, Integer> map = new HashMap<>();

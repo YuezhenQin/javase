@@ -1,4 +1,4 @@
-package JCL;
+package CollectionAPI;
 
 public class StringDemo {
     public static void main(String[] args) {

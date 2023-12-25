@@ -1,11 +1,11 @@
-package JCL;
+package CollectionAPI;
 
 import 排序.Person;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class CollectionTest {
+public class CollectionDemo {
     public static void main(String[] args) {
         //1.准备一个接口类型的引用
         Collection c1 = new ArrayList();
