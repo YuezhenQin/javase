@@ -2,7 +2,7 @@ package Arrays_and_strings;
 
 import java.util.Arrays;
 
-public class TwoPointerDemo {
+public class TwoPointersDemo {
 
     /*
     * Two pointers is an extremely common technique used to solve array and string problems.
@@ -85,6 +85,34 @@ public class TwoPointerDemo {
         return i == s.length();
     }
 
+    //Example 5: Reversing String (344)
+    public static char[] reverse(char[] chars) {
+        int left = 0;
+        int right = chars.length - 1;
+        while (left < right) {
+            swap(left, right, chars);
+            left ++;
+            right --;
+        }
+        return chars;
+    }
+
+    public static void reverseString(char[] chars) {
+        for (int i = 0, j = chars.length - 1; i < chars.length / 2; i++, j--) {
+            char tmp = chars[i];
+            chars[i] = chars[j];
+            chars[j] = tmp;
+        }
+    }
+
+    private static void swap(int left, int right, char[] chars) {
+        char tmp = chars[left];
+        chars[left] = chars[right];
+        chars[right] = tmp;
+    }
+
+
+
     public static void main(String[] args) {
         System.out.println(isPalindrome("LOL"));
         System.out.println(isPalindrome("radar"));
@@ -95,5 +123,10 @@ public class TwoPointerDemo {
         int[] arr2 = {2,4,8,108};
         int[] newArr = merge(arr1, arr2);
         System.out.println(Arrays.toString(newArr));
+
+        System.out.println(isSubsequence("absc", "abcde"));
+
+        char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+        System.out.println(reverse(vowels));
     }
 }
