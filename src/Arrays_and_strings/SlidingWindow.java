@@ -1,6 +1,6 @@
 package Arrays_and_strings;
 
-public class SlidingWindowDemo {
+public class SlidingWindow {
     //Example 1: find the length of the longest subarray of an array.
     public static int findLengthOfTheLongestSubarray(int[] arr, int k) {
         int left = 0;

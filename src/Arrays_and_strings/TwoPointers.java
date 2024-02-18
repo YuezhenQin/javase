@@ -2,7 +2,7 @@ package Arrays_and_strings;
 
 import java.util.Arrays;
 
-public class TwoPointersDemo {
+public class TwoPointers {
 
     /*
     * Two pointers is an extremely common technique used to solve array and string problems.
