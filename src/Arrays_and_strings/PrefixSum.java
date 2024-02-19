@@ -3,24 +3,6 @@ package Arrays_and_strings;
 import java.util.Arrays;
 
 public class PrefixSum {
-    public static boolean[] getAnswersToQueries(int[] nums, int[][] queries, int limit) {
-        int[] prefix = new int[nums.length];
-        prefix[0] = nums[0];
-
-        for (int i = 1; i < prefix.length; i++) {
-            prefix[i] = nums[i] + prefix[i - 1];
-        }
-
-        boolean[] ans = new boolean[queries.length];
-        for (int i = 0; i < queries.length; i++) {
-            int left = queries[i][0], right = queries[i][1];
-            //the sum of the subarray from i to j
-            int sum = prefix[right] - prefix[left] + nums[left];
-            ans[i] = sum < limit;
-        }
-        return ans;
-    }
-
     public static boolean[] answerToQueries(int[] nums, int[][] queries, int limit) {
 
         int[] prefix = new int[nums.length];
@@ -39,9 +21,6 @@ public class PrefixSum {
         return ans;
     }
 
-    public static int waysToSplitArray() {
-        return -1;
-    }
 
 
     public static void main(String[] args) {

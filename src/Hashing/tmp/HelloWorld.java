@@ -1,4 +1,4 @@
-package CollectionAPI;
+package Hashing.tmp;
 
 public class HelloWorld {
     //Code with me

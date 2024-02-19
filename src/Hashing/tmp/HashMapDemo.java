@@ -1,4 +1,4 @@
-package CollectionAPI;
+package Hashing.tmp;
 
 import java.util.*;
 

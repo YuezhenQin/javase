@@ -1,4 +1,4 @@
-package CollectionAPI;
+package Hashing.tmp;
 import 排序.Person;
 
 //1.hashCode(k1)

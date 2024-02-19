@@ -1,4 +1,4 @@
-package JDK.JDK8_2014;
+package JDK.Java8_2014;
 
 import 排序.Person;
 

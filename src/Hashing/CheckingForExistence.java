@@ -18,6 +18,7 @@ public class CheckingForExistence {
         }
         return new int[]{-1,-1};
     }
+
     //Solution 2351. First Letter to Appear Twice
     public static char repeatCharacter(String str) {
         Set<Character> set = new HashSet<>();
