@@ -1,4 +1,4 @@
-# Java SE EXAMPLE Project
+# JavaSE EXAMPLE Project
 ## Overview
 This project is a collection of fully functional examples written in Java programming language to show how to implement 14 typical algorithms && data Structures from sketch. It is created with ambition to make a short, complete and realistic DSA study guide for coding interviews as well as competitive programming.
 
