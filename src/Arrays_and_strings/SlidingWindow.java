@@ -51,7 +51,7 @@ public class SlidingWindow {
         return length;
     }
 
-    //Example 3: get num of subarray product less than k (Solution713)
+    //Example 3: Number of subarray that product less than k (Solution713)
     public static int findNumOfSubarray(int[] arr, int k) {
         int left = 0;
         int curr = 1;
@@ -70,19 +70,23 @@ public class SlidingWindow {
         return result;
     }
 
-    //Example 4: find the max average
+    //Solution643: Maximum Average Subarray
     public static double findMaxAverage(int[] arr, int k) {
-    //beats 100% of users with Java
+        // calculate initial sliding window
         int sum = 0;
         for (int i = 0; i < k; i++) {
             sum += arr[i];
         }
-
         int max = sum;
+
+        //slide the window from left to right, by add arr[right] and remove arr[left]
         int left = 0;
         for (int right = k; right < arr.length; right++) {
-            sum = sum + arr[right] - arr[left];
-            if (sum > max) max = sum;
+//            sum = sum + arr[right] - arr[left];
+            sum += arr[right];
+            sum -= arr[left];
+            max = Math.max(sum, max);
+
             left ++;
         }
         return (double) max / k;

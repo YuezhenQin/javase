@@ -1,11 +1,11 @@
 package JDK.Java8_2014;
 
-import 排序.Person;
+import SortingAlgorithm.Person;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static 排序.Person.filterPeople;
+import static SortingAlgorithm.Person.filterPeople;
 
 public class LambdaDemo {
 

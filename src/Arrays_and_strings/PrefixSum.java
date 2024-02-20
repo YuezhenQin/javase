@@ -21,6 +21,21 @@ public class PrefixSum {
         return ans;
     }
 
+    //Solution 2270. Number of Ways to Split Array
+    public static int waysToSplitArray(int[] nums) {
+        long[] prefix = new long[nums.length];
+        prefix[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            prefix[i] = prefix[i-1] + nums[i];
+        }
+
+        int counts = 0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (prefix[i] >= prefix[nums.length-1] - prefix[i]) counts++;
+        }
+        return counts;
+    }
+
 
 
     public static void main(String[] args) {
@@ -28,5 +43,9 @@ public class PrefixSum {
         int[][] queries = {{0,3}, {2,5}, {2,4}};
         int limit = 13;
         System.out.println(Arrays.toString(answerToQueries(nums, queries, limit)));
+
+        nums = new int[]{1, 1, 1, 1, 1, 1, 1};
+        System.out.println(waysToSplitArray(nums));
+
     }
 }
