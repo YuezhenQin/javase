@@ -34,19 +34,43 @@ public class SlidingWindow {
         }
         return result;
     }
-    // Solution 1004.
-    public static int findLengthOfLongestOnes(int[] nums, int k) {
-        int left = 0;
-        int curr = 0;
-        int length = 0;
-        for (int right = 0; right < nums.length; right ++) {
-            if(nums[right] == 0) curr ++;
 
-            while (curr > k) {
-                if (nums[left] == 0) curr --;
+    //
+
+    // Solution 1004. Max Consecutive Ones |||
+    public static int longestOnes(int[] nums, int k) {
+        int length = 0;
+
+        int zeros = 0;
+
+        int left = 0;
+        for (int right = 0; right < nums.length; right ++) {
+            if (nums[right] == 0) zeros ++;
+
+            while (zeros > k) {
+                if (nums[left] == 0) zeros --;
                 left ++;
             }
-            length = Math.max(length, right - left + 1);
+            length = Math.max(right - left + 1, length);
+        }
+        return length;
+    }
+
+    public static int findLengthOfLongestOnes(int[] nums, int k) {
+        int zeros = 0;
+
+        int length = 0;
+
+        int left = 0;
+        for (int right = 0; right < nums.length; right ++) {
+            if(nums[right] == 0) zeros ++;
+
+            while (zeros > k) {
+                if (nums[left] == 0) zeros --;
+                left ++;
+            }
+
+            length = Math.max(length, right - left + 1); //*
         }
         return length;
     }
@@ -106,6 +130,10 @@ public class SlidingWindow {
         int[] nums1 = {1,1,1,0,0,0,1,1,1,1,0};
         int[] nums2 = {0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1};
         System.out.println(findLengthOfLongestOnes(nums1, 2));
+        System.out.println(longestOnes(nums1, 2));
         System.out.println(findLengthOfLongestOnes(nums2, 3));
+        System.out.println(longestOnes(nums2, 3));
+
+
     }
 }
