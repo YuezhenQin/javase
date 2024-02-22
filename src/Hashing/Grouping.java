@@ -10,7 +10,7 @@ public class Grouping {
             char[] chars = str.toCharArray();
             Arrays.sort(chars); //*
             String key = new String(chars); // use the identifier as a hashmap key to group all elements together
-            if (!groups.containsKey(key)) groups.put(key, new ArrayList<String>()); //*
+            if (!groups.containsKey(key)) groups.put(key, new ArrayList<>()); //*
             groups.get(key).add(str);
         }
 
