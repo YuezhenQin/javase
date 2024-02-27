@@ -4,7 +4,7 @@ import java.util.*;
 
 //Hashing:
 //HashMap (Dictionary): Counting
-//HashSet: Add,Remove,and Check if an element exists; Repetition; Grouping
+//HashSet: Check existence; Detect Repetition; Grouping
 
 public class CheckingForExistence {
     //Solution1. Two Sum: Get indices of two numbers such that they add up to target.
@@ -21,16 +21,15 @@ public class CheckingForExistence {
 
     public static List<Integer> findAll(int[] nums) {
         List<Integer> list = new ArrayList<>();
-        Set<Integer> set = new HashSet<>();
+        Set<Integer> seen = new HashSet<>();
 
         for (int num: nums) {
-            set.add(num);
+            seen.add(num);
         }
 
         for (int num : nums) {
-            if (!set.contains(num - 1) && !set.contains(num + 1)) list.add(num);
+            if (!seen.contains(num - 1) && !seen.contains(num + 1)) list.add(num);
         }
-
         return list;
     }
 
@@ -52,11 +51,11 @@ public class CheckingForExistence {
 
     //Solution2351. First Letter to Appear Twice
     public static char repeatCharacter(String str) {
-        Set<Character> set = new HashSet<>();
+        Set<Character> seen = new HashSet<>();
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
-            if (set.contains(c)) return c;
-            set.add(c);
+            if (seen.contains(c)) return c;
+            seen.add(c);
         }
         return ' ';
     }
