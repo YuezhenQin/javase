@@ -1,5 +1,11 @@
 package Trees_and_Graphs;
 
+import Hashing.tmp.A;
+
+import java.util.*;
+
+//DFS
+//BFS(199.,)
 public class BinaryTree {
     public class TreeNode {
         int val;
@@ -64,7 +70,7 @@ public class BinaryTree {
         return ans;
     }
 
-    //Solution100. The same tree
+    //Solution100. the same tree
     public static boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null && q == null) return true;
         if (p == null || q == null) return false;
@@ -74,6 +80,76 @@ public class BinaryTree {
         return left && right;
     }
 
+    //Solution199. the rightmost node at each level of binary tree
+    public static List<Integer> rightmostNodes(TreeNode root) {
+        if (root == null) return new ArrayList<>();
+
+        List<Integer> ans = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode curr = queue.remove();
+                if (i == size - 1) ans.add(curr.val);
+
+                if (curr.left != null) queue.add(curr.left);
+                if (curr.right != null) queue.add(curr.right);
+            }
+        }
+        return ans;
+    }
+
+    //Solution515. the largest node at each level
+    public static List<Integer> largestNodes(TreeNode root) {
+        if (root == null) return new LinkedList<>();
+
+        List<Integer> ans = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            int max = Integer.MIN_VALUE;
+            for (int i = 0; i < size; i++) {
+                TreeNode curr = queue.remove();
+                max = Math.max(curr.val, max);
+                if (curr.left != null) queue.add(curr.left);
+                if (curr.right != null) queue.add(curr.right);
+            }
+            ans.add(max);
+        }
+        return ans;
+    }
+
+    //Solution103. zigzag bfs
+    public List<List<Integer>> zigzagBFS(TreeNode root) {
+        if (root == null) return new LinkedList<>();
+
+        List<List<Integer>> ans = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        boolean flip = true;
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            LinkedList<Integer> levelList = new LinkedList<>(); //*
+            for (int i = 0; i < size; i++) {
+                TreeNode curr = queue.remove();
+//                levelList.add(curr.val);
+                if (curr.left != null) queue.add(curr.left);
+                if (curr.right != null) queue.add(curr.right);
+                if (flip) {
+                    levelList.addLast(curr.val);
+                } else {
+                    levelList.addFirst(curr.val);
+                }
+            }
+            ans.add(levelList);
+            flip = !flip;
+        }
+        return ans;
+    }
     public static void main(String[] args) {
 
     }

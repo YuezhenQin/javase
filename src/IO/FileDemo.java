@@ -1,22 +1,24 @@
 package IO;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 //jdk11 java.nio.file.Files 读写文件更简单
 public class FileDemo {
+    public static void printDirectory(File file) {
+
+    }
+
     public static void main(String[] args) throws IOException {
-//        Path path = Files.writeString(Files.createTempFile("test", ".txt"), "测试字符串");
-//        System.out.println(path);
-//        String str = Files.readString(path);
-//        System.out.println(str);
+        Path path = Files.writeString(Files.createTempFile("tmp", ".txt"), "测试字符串");
+        System.out.println(path);
+        String str = Files.readString(path);
+        System.out.println(str);
 
-        //Formatter
 
-        //Scanner
-
-        //如何完整地复制一个文件
+        //复制一个文件
 
         //创建一个新的文件或目录
 //        Files.createFile(Path.of("tmp.txt"));
