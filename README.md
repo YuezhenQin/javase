@@ -19,7 +19,7 @@ This project is a collection of fully functional examples written in Java progra
 * Recursion 递归构造
 * MergeSort 归并排序
 * QuickSort 快速排序
-* BinarySearchTree 二分搜索树
+* BinarySearchTree 二分搜索树 (左子树中所有元素小于当前节点元素，右子树中所有元素大于当前节点元素)
  * TreeNode
 * Set&Map 集合与映射
 * Heap 堆
