@@ -5,22 +5,22 @@ This project is a collection of fully functional examples written in Java progra
 * SelectionSort 选择排序
 * InsertionSort 插入排序
 * Array
-* LinkedList
-* Stack (将增删操作限制为单侧，并且数据满足后入先出 LIFO)
-  * ARStack
-  * LLStack
-* Queue (数据满足先入先出 FIFO)
-  * ARQueue
-  * LLQueue
-  * CircularQueue 循环队列
-  * PriorityQueue 优先队列
+* Stack&Queue
+  * Stack (将增删操作限制为单侧，并且数据满足后入先出 LIFO)
+    * ARStack
+    * LLStack
+  * Queue (数据满足先入先出 FIFO)
+    * ARQueue
+    * LLQueue
+    * CircularQueue 循环队列
+    * PriorityQueue 优先队列
 * LinkedList Review
- * ListNode
+  * ListNode
 * Recursion 递归构造
 * MergeSort 归并排序
 * QuickSort 快速排序
 * BinarySearchTree 二分搜索树 (左子树中所有元素小于当前节点元素，右子树中所有元素大于当前节点元素)
- * TreeNode
+  * TreeNode
 * Set&Map 集合与映射
 * Heap 堆
 
