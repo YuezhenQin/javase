@@ -6,10 +6,10 @@ This project is a collection of fully functional examples written in Java progra
 * InsertionSort 插入排序
 * Array
 * LinkedList
-* Stack (将增删操作限制为单侧，并且数据满足先入先出)
+* Stack (将增删操作限制为单侧，并且数据满足后入先出 LIFO)
   * ARStack
   * LLStack
-* Queue 
+* Queue (数据满足先入先出 FIFO)
   * ARQueue
   * LLQueue
   * CircularQueue 循环队列
