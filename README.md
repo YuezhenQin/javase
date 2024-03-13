@@ -14,15 +14,13 @@ This project is a collection of fully functional examples written in Java progra
   * LLQueue
   * CircularQueue 循环队列
   * PriorityQueue 优先队列
-|Stack     |Queue     |  
-| -------- | ------- | 
-|void push(E)<br>E pop()<br>E peek()<br>int getSize()<br>boolean isEmpty()|void enqueue(E)<br>E dequeue()<br>E getFirst()<br>int getSize()<br>boolean isEmpty()|
 * LinkedList Review
  * ListNode
 * Recursion 递归构造
 * MergeSort 归并排序
 * QuickSort 快速排序
 * BinarySearchTree 二分搜索树
+ * TreeNode
 * Set&Map 集合与映射
 * Heap 堆
 
