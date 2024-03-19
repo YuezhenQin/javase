@@ -8,7 +8,134 @@ package SearchAlgorithm;
 
 * */
 
+import java.util.Arrays;
+
 public class BinarySearch <E> {
+    //Solution704. binary search
+    public static int binarySearch(int[] arr, int x) {
+        // Define the current search space
+        int left = 0;
+        int right = arr.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2; // Half the search space at every iteration
+            if (arr[mid] == x) return mid;
+            if (arr[mid] > x) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return left;
+    }
+
+    //Solution74. search a 2D matrix
+    public static boolean binarySearchMatrix(int[][] matrix, int target) {
+        int left = 0;
+        int right = matrix.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (matrix[mid][0] > target) {
+                right = mid - 1;
+                continue;
+            }
+            if (matrix[mid][matrix[mid].length - 1] < target) {
+                left = mid + 1;
+                continue;
+            }
+
+            for (int i = 0; i < matrix[mid].length; i++) {
+                if (matrix[mid][i] == target) return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    //Solution35. search insertion point
+    public int searchInsertionPoint(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) { //*
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) return mid;
+            if (nums[mid] > target) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return nums[left] > target ? left: left + 1;
+    }
+
+    //Solution2389. longest subsequence with limited sum
+    public int[] answerToQueries(int[] nums, int[] queries) {
+        Arrays.sort(nums);
+        int[] counts = new int[queries.length];
+        for (int i = 0; i < queries.length; i++) {
+            int count = 0;
+            int query = queries[i];
+            for (int num: nums) {
+                if (num <= query) {
+                    count ++;
+                    query -= num; //*
+                } else {
+                    break;
+                }
+            }
+            counts[i] = count;
+        }
+        return counts;
+    }
+
+    public static int[] answerToQueries(int[] nums, int[] queries, boolean tmp) {
+        Arrays.sort(nums);
+        int[] prefix = new int[nums.length];
+        prefix[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            prefix[i] = prefix[i - 1] + nums[i];
+        }
+        int[] counts = new int[queries.length];
+        for (int i = 0; i < queries.length; i++) {
+            int index = binarySearch(prefix, queries[i]);
+            counts[i] = index;
+        }
+        return counts;
+    }
+
+
+    //Solution875. Koko Eating Bananas
+    public static int minimumSpeed(int[] piles, int h) {
+        int limit = h;
+        // define a search space
+        int left = 1; // minimum possible answer
+        int right = Arrays.stream(piles).max().getAsInt(); // maximum possible answer
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (check(mid, piles, limit)) { // piles/k = exph <= h
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return left;
+    }
+    private static boolean check(int k, int[] piles, int h) {
+        int exph = 0;
+        for (int pile: piles) {
+            while (pile > 0) {pile = pile - k; exph++;}
+        }
+        return exph <= h;
+    }
+//    private static int geth(int[] piles, int k) {
+//        int h = 0;
+//        for (int pile: piles) {
+//            while (pile > 0) {pile = pile - k; h++;}
+//        }
+//        return h;
+//    }
+
+
     /* 非递归实现二分查找 */
     public static <E extends Comparable<E>> int search(E[] data, E target) {
          int left = 0;

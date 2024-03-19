@@ -21,6 +21,15 @@ public class BinaryTree {
             this.right = right;
         }
     }
+    //Solution100. is the same tree
+//    public boolean isSameTree(TreeNode p, TreeNode q) {
+//        if (p == null && q == null) return true;
+//        if (p == null || q == null) return false;
+//        boolean leftSubtree = isSameTree(p.left, q.left);
+//        boolean rightSubtree = isSameTree(p.right, q.right);
+//        return p.val == q.val && leftSubtree && rightSubtree;
+//    }
+
 
     //Solution104. Maximum depth of binary tree
     public static int maxDepth(TreeNode root) {

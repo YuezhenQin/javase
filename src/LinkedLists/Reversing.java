@@ -1,4 +1,4 @@
-package Linked_List;
+package LinkedLists;
 
 public class Reversing {
     //Reversing LL |

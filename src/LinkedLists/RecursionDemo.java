@@ -1,4 +1,4 @@
-package Linked_List;
+package LinkedLists;
 
 //Recursion is a problem-solving method. In code, recursion is implemented using a function that calls itself.
 public class RecursionDemo {

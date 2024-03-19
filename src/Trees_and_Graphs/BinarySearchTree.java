@@ -32,7 +32,6 @@ public class BinarySearchTree {
         return left && right;
     }
 
-
     //Solution938. range sum of BST
     public static int rangeSum(TreeNode root, int low, int high) {
         if (root == null) return 0;
@@ -56,13 +55,10 @@ public class BinarySearchTree {
         }
         return min;
     }
-
     private static void inOrderDFS(TreeNode curr, List<Integer> values) {
         if (curr == null) return;
         inOrderDFS(curr.left, values);
         values.add(curr.val);
         inOrderDFS(curr.right, values);
     }
-
-
 }

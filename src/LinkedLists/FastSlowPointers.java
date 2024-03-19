@@ -1,4 +1,4 @@
-package Linked_List;
+package LinkedLists;
 
 public class FastSlowPointers {
     public static class ListNode {
