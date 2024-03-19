@@ -1,33 +1,27 @@
 # JavaSE EXAMPLE Project
 ## Overview
 This project is a collection of fully functional examples written in Java programming language to show how to implement 14 typical algorithms && data Structures from sketch. It is created with ambition to make a short, complete and realistic DSA study guide for coding interviews as well as competitive programming.
-
 * LinearSearch 线性查找
 * SelectionSort 选择排序
 * InsertionSort 插入排序
- 
 * Array
-* LinkedList
- 
-* Stack (将增删操作限制为单侧，并且数据满足先入先出)
-  * ARStack
-  * LLStack
-* Queue 
-  * ARQueue
-  * LLQueue
-  * CircularQueue 循环队列
-  * PriorityQueue 优先队列
-
-|Stack     |Queue     |  
-| -------- | ------- | 
-|void push(E)<br>E pop()<br>E peek()<br>int getSize()<br>boolean isEmpty()|void enqueue(E)<br>E dequeue()<br>E getFirst()<br>int getSize()<br>boolean isEmpty()|
-* LinkedList 
-* ListNode
+* Stack&Queue
+  * Stack (将增删操作限制为单侧，并且数据满足后入先出 LIFO)
+    * ARStack
+    * LLStack
+  * Queue (数据满足先入先出 FIFO)
+    * ARQueue
+    * LLQueue
+    * CircularQueue 循环队列
+    * PriorityQueue 优先队列
+* LinkedList Review
+  * ListNode
 * Recursion 递归构造
 * MergeSort 归并排序
 * QuickSort 快速排序
-* BST 二分搜索树
-* Set 集合 Map 映射
+* BinarySearchTree 二分搜索树 (左子树中所有元素小于当前节点元素，右子树中所有元素大于当前节点元素)
+  * TreeNode
+* Set&Map 集合与映射
 * Heap 堆
 
 LinkedList
