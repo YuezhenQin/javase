@@ -1,6 +1,6 @@
 package Hashing.tmp;
 
-import SortingAlgorithm.Person;
+import Algorithms.SortingAlgorithm.Person;
 
 import java.util.ArrayList;
 import java.util.Collection;

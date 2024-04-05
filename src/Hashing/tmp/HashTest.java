@@ -1,5 +1,5 @@
 package Hashing.tmp;
-import SortingAlgorithm.Person;
+import Algorithms.SortingAlgorithm.Person;
 
 //1.hashCode(k1)
 //2.(hashCode(k1) & 0x7fffffff) % M
