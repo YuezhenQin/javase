@@ -4,6 +4,7 @@ This project is a collection of fully functional examples written in Java progra
 * LinearSearch 线性查找
 * SelectionSort 选择排序
 * InsertionSort 插入排序
+* QuickSort 快速排序
 * Array
 * Stack&Queue
   * Stack (将增删操作限制为单侧，并且数据满足后入先出 LIFO)
