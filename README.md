@@ -14,7 +14,7 @@ This project is a collection of fully functional examples written in Java progra
     * LLQueue
     * CircularQueue 循环队列
     * PriorityQueue 优先队列
-* LinkedList Review
+* LinkedList
   * ListNode
 * Recursion 递归构造
 * MergeSort 归并排序
