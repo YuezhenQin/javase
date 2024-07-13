@@ -1,7 +1,6 @@
 ## Overview
 This project is a collection of fully functional examples written in Java programming language, showing how to implement 14 typical algorithms && data Structures from sketch. It is created with ambition to make a short, complete and realistic DSA study guide for coding interviews as well as competitive programming.
 
-学习次序:
 1. LinearSearch 线性查找
 2. SelectionSort 选择排序
 3. InsertionSort 插入排序
