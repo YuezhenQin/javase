@@ -1,11 +1,12 @@
 package Hashing;
 
-import CollectionAPI.A;
-
 import java.util.*;
 
 //Anytime you need to count anything, think about using a HashMap to do it.
 public class Counting {
+    //Solution560.
+
+
     // k distinct chars: Find the length of the longest substring that contains at most k distinct characters.
     public static int findSubstring(String str, int k) {
         Map<Character, Integer> counts = new HashMap<>();

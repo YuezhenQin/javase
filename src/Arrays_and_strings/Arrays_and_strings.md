@@ -8,6 +8,7 @@ Two pointers is an extremely common technique used to solve array and string pro
 ## Sliding Window
 Like two pointers, sliding windows work the same with arrays and strings - the important thing is that they're iterables with **ordered elements**. For the sake of brevity, the first part of this article up until the examples will be focusing on arrays. However, all the logic is identical for strings.
 
+
 ### Subarrays
 Given an array, a subarray is a contiguous section of the array. All the elements must be adjacent to each other in the original array and in their original order. For example, with the array [1, 2, 3, 4], the subarrays (grouped by length) are:
 

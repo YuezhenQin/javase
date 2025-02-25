@@ -1,3 +1,4 @@
+
 public class ARStack<E> implements Stack<E> { //动态数组实现的栈
     //栈的属性
     Array<E> arr;
@@ -9,7 +10,7 @@ public class ARStack<E> implements Stack<E> { //动态数组实现的栈
         arr = new Array<E>();
     }
 
-    @Override
+
     public int getSize() {
         return arr.getSize();
     }

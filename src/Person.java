@@ -1,4 +1,4 @@
-import 排序.Array;
+import Algorithms.SortingAlgorithm.Array;
 
 public class Person implements Comparable<Person> {
     private String name;

@@ -39,8 +39,7 @@ public class TwoPointers {
         return false;
     }
 
-    //Example 3: Given two sorted integer arrays arr1 and arr2,
-    //return a new array that combines both of them and is also sorted.
+    //Example 3: Combine sorted arrays
     public static int[] merge(int[] arr1, int[] arr2) {
         int i = 0;
         int j = 0;
@@ -71,8 +70,7 @@ public class TwoPointers {
         return newArr;
     }
 
-    //Example 4: 392. Is Subsequence.
-    //Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+    //Solution392. Is Subsequence
     public static boolean isSubsequence(String s, String t) {
         int i = 0;
         int j = 0;
@@ -85,33 +83,27 @@ public class TwoPointers {
         return i == s.length();
     }
 
-    //Example 5: Reversing String (344)
-    public static char[] reverse(char[] chars) {
+    //Solution344: Reverse String
+    public static void reverseString(String str) {
+        char[] chars = str.toCharArray();
         int left = 0;
-        int right = chars.length - 1;
+        int right = str.length();
         while (left < right) {
-            swap(left, right, chars);
-            left ++;
-            right --;
+            char tmp = chars[left];
+            chars[left] = chars[right];
+            chars[right] = tmp;
+            left++;
+            right--;
         }
-        return chars;
     }
-
     public static void reverseString(char[] chars) {
         for (int i = 0, j = chars.length - 1; i < chars.length / 2; i++, j--) {
             char tmp = chars[i];
             chars[i] = chars[j];
             chars[j] = tmp;
         }
+        System.out.println(chars);
     }
-
-    private static void swap(int left, int right, char[] chars) {
-        char tmp = chars[left];
-        chars[left] = chars[right];
-        chars[right] = tmp;
-    }
-
-
 
     public static void main(String[] args) {
         System.out.println(isPalindrome("LOL"));
@@ -127,6 +119,6 @@ public class TwoPointers {
         System.out.println(isSubsequence("absc", "abcde"));
 
         char[] vowels = {'a', 'e', 'i', 'o', 'u'};
-        System.out.println(reverse(vowels));
+        reverseString(vowels);
     }
 }
